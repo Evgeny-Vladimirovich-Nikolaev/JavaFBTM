@@ -1,4 +1,7 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -29,25 +32,24 @@ public class ValueReceiver {
         return secondValue;
     }
 
-    private int receiveValue(String enter){
+    private int receiveValue(String enter) {
         int temp;
         System.out.println(enter);
-        while(true){
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.next();
+        while(true) {
             try {
-                temp = Integer.valueOf(input);
-            } catch (NumberFormatException numExp) {
-                if (scanner.hasNextBigInteger()) {
-                    System.out.println(invalidNumber + condition + again);
-                } else if (scanner.hasNext()) {
-                    System.out.println(input + invalidLine + again);
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                try {
+                    temp = Integer.parseInt(br.readLine());
+                } catch (NumberFormatException | IOException numEx) {
+                    System.out.println(invalidNumber);
+                    continue;
                 }
-                scanner.close();
-                continue;
+                break;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            break;
         }
+        System.out.println("value is " + temp);
         return temp;
     }
 }
