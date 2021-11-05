@@ -36,16 +36,24 @@ public class ValueReceiver {
         int temp;
         System.out.println(enter);
         while(true) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             try {
-                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 try {
                     temp = Integer.parseInt(br.readLine());
-                } catch (NumberFormatException | IOException numEx) {
+                } catch (NumberFormatException numEx) {
                     System.out.println(invalidNumber);
+                    continue;
+                } catch (IOException numEx) {
+                    System.out.println("Something went wrong");
                     continue;
                 }
                 break;
             } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                br.close();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
