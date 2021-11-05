@@ -41,7 +41,7 @@ public class ValueReceiver {
                 try {
                     temp = Integer.parseInt(br.readLine());
                 } catch (NumberFormatException numEx) {
-                    System.out.println(invalidNumber);
+                    System.out.println(numEx + invalidNumber);
                     continue;
                 } catch (IOException numEx) {
                     System.out.println(numEx + " Something went wrong");
