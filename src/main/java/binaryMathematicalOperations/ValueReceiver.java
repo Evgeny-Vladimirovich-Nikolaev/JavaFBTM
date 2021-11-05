@@ -44,7 +44,7 @@ public class ValueReceiver {
                     System.out.println(invalidNumber);
                     continue;
                 } catch (IOException numEx) {
-                    System.out.println("Something went wrong");
+                    System.out.println(numEx + " Something went wrong");
                     continue;
                 }
                 break;
