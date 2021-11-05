@@ -19,10 +19,6 @@ public class ValueReceiver {
     private String secondValue = "The second number is ";
 
     ValueReceiver(){
-        setValues();
-    }
-
-    private void setValues(){
         firstNumber = receiveValue(firstMessage, firstValue);
         secondNumber = receiveValue(secondMessage, secondValue);
     }
