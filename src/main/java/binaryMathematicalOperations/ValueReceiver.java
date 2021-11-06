@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class ValueReceiver {
 
     private int firstNumber, secondNumber;
+
     private String firstMessage = "Enter two numbers between -2147483648 and 2147483647";
     private String secondMessage = "Enter the second number";
     private String condition = "The value must be between -2147483648 and 2147483647\n";
@@ -32,7 +33,7 @@ public class ValueReceiver {
     }
 
     private int receiveValue(String message, String currentValue) {
-        int newNumber;
+        int newNumber = 0;
         String temp = "";
         System.out.println(message);
         while(true) {
@@ -49,7 +50,7 @@ public class ValueReceiver {
                     continue;
                 } catch (IOException numEx) {
                     System.out.println(ioError);
-                    continue;
+                    break;
                 }
                 break;
             } catch (Exception e) {
@@ -72,7 +73,7 @@ public class ValueReceiver {
         }
         for(int i = 1; i < ch.length; i++){
             if(ch[i] < 48 || ch[i] > 57)
-            return false;
+                return false;
         }
         return true;
     }
