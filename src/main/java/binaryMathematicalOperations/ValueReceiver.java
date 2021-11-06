@@ -9,15 +9,16 @@ public class ValueReceiver {
     private int firstNumber, secondNumber;
 
     private String firstMessage = "Enter two numbers between -2147483648 and 2147483647";
+    private String firstValue = "The first number is ";
     private String secondMessage = "Enter the second number";
-    private String condition = "The value must be between -2147483648 and 2147483647\n";
+    private String secondValue = "The second number is ";
     private String invalidNumber = " is invalid number\n";
+    private String condition = "The value must be between -2147483648 and 2147483647\n";
+    private String again = "Please try again";
     private String invalidLine = " is not a number\n";
     private String ioError = "Input output error";
     private String error = "Something went wrong";
-    private String again = "Please try again";
-    private String firstValue = "The first number is ";
-    private String secondValue = "The second number is ";
+
 
     ValueReceiver(){
         firstNumber = receiveValue(firstMessage, firstValue);
@@ -37,7 +38,8 @@ public class ValueReceiver {
         String temp = "";
         System.out.println(message);
         while(true) {
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            InputStreamReader stream = new InputStreamReader(System.in);
+            BufferedReader br = new BufferedReader(stream);
             try {
                 try {temp = br.readLine();
                     newNumber = Integer.parseInt(temp);
@@ -50,7 +52,6 @@ public class ValueReceiver {
                     continue;
                 } catch (IOException numEx) {
                     System.out.println(ioError);
-                    break;
                 }
                 break;
             } catch (Exception e) {
@@ -61,13 +62,18 @@ public class ValueReceiver {
             } catch (IOException e) {
                 System.out.println(ioError);
             }
+            try{
+                stream.close();
+            }catch (IOException e){
+                System.out.println(ioError);
+            }
         }
         System.out.println(currentValue + newNumber);
         return newNumber;
     }
 
     private boolean checkLine(@NotNull String line){
-        char ch[] = line.toCharArray();
+        char[] ch = line.toCharArray();
         if(ch[0] != 45 && (ch[0] < 48 || ch[0] > 57)){
             return false;
         }

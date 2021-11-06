@@ -5,59 +5,82 @@ import java.io.InputStreamReader;
 public class Calculator {
 
     private int first, second;
-    private String choose = "Choose operation, press:\n";
-    private String addition = "1 + ENTER to add\n";
-    private String subtraction = "2 + ENTER to subtract\n";
-    private String multiplication = "3 + ENTER to multiply\n";
-    private String division = "4 + ENTER to divide";
+    private String line, result;
+    private String choose = "Choose operation, Enter:\n";
+    private String addition = "1 to add\n";
+    private String subtraction = "2 to subtract\n";
+    private String multiplication = "3 to multiply\n";
+    private String division = "4 to divide";
+    private String ioError = "Input output error";
+    private String error = "Something went wrong";
+
 
     Calculator(int first, int second) {
         this.first = first;
         this.second = second;
-        chooseOperation();
-        parseLine();
+        sendMessage();
+        read();
     }
 
-    private void chooseOperation(){
+    private void sendMessage(){
         System.out.println(choose + addition + subtraction + multiplication + division);
     }
 
-    private void parseLine(){
-        String line;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private void read(){
+        InputStreamReader stream = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(stream);
+        boolean isReady;
+
         while(true){
+            try {
+                isReady = stream.ready();
+            } catch (IOException e) {
+                System.out.println(ioError);
+                continue;
+            }
+            if(!isReady){
+                continue;
+            }
             try{
                 line = br.readLine();
-                switch (line){
-                    case "1" : add();
-                        break;
-                    case "2" : subtract();
-                        break;
-                    case "3" : multiply();
-                        break;
-                    case "4" : divide();
-                        break;
-                    default  : continue;
-                }
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(ioError);
+                continue;
+            } catch (Exception exp){
+                System.out.println(error);
             }
+            switch (line) {
+                case "1" -> add();
+                case "2" -> subtract();
+                case "3" -> multiply();
+                case "4" -> divide();
+                default -> {
+                    sendMessage();
+                    continue;
+                }
+            }
+            break;
         }
     }
 
     private void add(){
-        System.out.println((long)first + second);
+       result = Long.toString((long)first + second);
     }
 
     private void subtract(){
-        System.out.println((long)first - second);
+        result = Long.toString((long)first - second);
     }
 
     private void multiply(){
-        System.out.println((long)first * second);
+        result = Long.toString((long)first * second);
     }
 
     private void divide(){
-        System.out.println((double)first / second);
+        result = Double.toString((double) first / second);
+    }
+
+    @Override
+    public String toString(){
+        return result;
     }
 }
