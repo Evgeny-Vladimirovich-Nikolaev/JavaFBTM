@@ -58,6 +58,6 @@ public class Calculator {
     }
 
     private void divide(){
-        System.out.println((double)first + second);
+        System.out.println((double)first / second);
     }
 }
