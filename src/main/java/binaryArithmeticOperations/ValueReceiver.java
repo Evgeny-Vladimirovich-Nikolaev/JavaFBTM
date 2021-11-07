@@ -6,20 +6,20 @@ import java.io.InputStreamReader;
 
 public class ValueReceiver {
 
-    public static final String FIRST_MESSAGE = "Enter two numbers between -2147483648 and 2147483647";
+    public static final String FIRST_MESSAGE = "Enter two integers between -2147483648 and 2147483647";
     public static final String FIRST_VALUE = "The first number is ";
     public static final String SECOND_MESSAGE = "Enter the second number";
     public static final String SECOND_VALUE = "The second number is ";
     public static final String INVALID_NUMBER = " is invalid number\n";
-    public static final String CONDITION = "The value must be between -2147483648 and 2147483647\n";
-    public static final String AGAIN = "Please try Again";
+    public static final String CONDITION = "The value must be integer between -2147483648 and 2147483647\n";
+    public static final String AGAIN = "Please try again";
     public static final String INVALID_LINE = " is not a number\n";
     public static final String IO_ERROR = "Input Output ERROR!";
     public static final String ERROR = "SOMETHING WENT WRONG!";
 
     private int firstNumber, secondNumber;
 
-    ValueReceiver(){
+    ValueReceiver() {
         firstNumber = receiveValue(FIRST_MESSAGE, FIRST_VALUE);
         secondNumber = receiveValue(SECOND_MESSAGE, SECOND_VALUE);
     }
@@ -35,35 +35,42 @@ public class ValueReceiver {
     private int receiveValue(String message, String currentValue) {
         int newNumber = 0;
         String temp = "";
+
         System.out.println(message);
+
         while(true) {
             InputStreamReader stream = new InputStreamReader(System.in);
             BufferedReader br = new BufferedReader(stream);
             try {
                 try {temp = br.readLine();
                     newNumber = Integer.parseInt(temp);
-                } catch (NumberFormatException numEx) {
-                    if(checkLine(temp)){
-                        System.out.println(temp + INVALID_NUMBER + CONDITION + AGAIN);
+                } catch(NumberFormatException numEx) {
+                    if(checkLine(temp)) {
+                        System.out.println(temp
+                                + INVALID_NUMBER
+                                + CONDITION
+                                + AGAIN);
                     } else {
-                        System.out.println(temp + INVALID_LINE + AGAIN);
+                        System.out.println(temp
+                                + INVALID_LINE
+                                + AGAIN);
                     }
                     continue;
-                } catch (IOException numEx) {
+                } catch(IOException numEx) {
                     System.out.println(IO_ERROR);
                 }
                 break;
-            } catch (Exception e) {
+            } catch(Exception e) {
                 System.out.println(ERROR);
             }
             try {
                 br.close();
-            } catch (IOException e) {
+            } catch(IOException e) {
                 System.out.println(IO_ERROR);
             }
-            try{
+            try {
                 stream.close();
-            }catch (IOException e){
+            } catch(IOException e){
                 System.out.println(IO_ERROR);
             }
         }
@@ -71,12 +78,12 @@ public class ValueReceiver {
         return newNumber;
     }
 
-    private boolean checkLine(@NotNull String line){
+    private boolean checkLine(@NotNull String line) {
         char[] ch = line.toCharArray();
-        if(ch[0] != 45 && (ch[0] < 48 || ch[0] > 57)){
+        if(ch[0] != 45 && (ch[0] < 48 || ch[0] > 57)) {
             return false;
         }
-        for(int i = 1; i < ch.length; i++){
+        for(int i = 1; i < ch.length; i++) {
             if(ch[i] < 48 || ch[i] > 57)
                 return false;
         }
