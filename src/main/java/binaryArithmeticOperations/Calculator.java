@@ -16,8 +16,6 @@ public class Calculator {
     private int first, second;
     private String line, result, message;
 
-
-
     Calculator(int first, int second) {
         this.first = first;
         this.second = second;
