@@ -6,23 +6,22 @@ import java.io.InputStreamReader;
 
 public class ValueReceiver {
 
+    public static final String FIRST_MESSAGE = "Enter two numbers between -2147483648 and 2147483647";
+    public static final String FIRST_VALUE = "The first number is ";
+    public static final String SECOND_MESSAGE = "Enter the second number";
+    public static final String SECOND_VALUE = "The second number is ";
+    public static final String INVALID_NUMBER = " is invalid number\n";
+    public static final String CONDITION = "The value must be between -2147483648 and 2147483647\n";
+    public static final String AGAIN = "Please try Again";
+    public static final String INVALID_LINE = " is not a number\n";
+    public static final String IO_ERROR = "Input Output ERROR!";
+    public static final String ERROR = "SOMETHING WENT WRONG!";
+
     private int firstNumber, secondNumber;
 
-    private String firstMessage = "Enter two numbers between -2147483648 and 2147483647";
-    private String firstValue = "The first number is ";
-    private String secondMessage = "Enter the second number";
-    private String secondValue = "The second number is ";
-    private String invalidNumber = " is invalid number\n";
-    private String condition = "The value must be between -2147483648 and 2147483647\n";
-    private String again = "Please try again";
-    private String invalidLine = " is not a number\n";
-    private String ioError = "Input output error";
-    private String error = "Something went wrong";
-
-
     ValueReceiver(){
-        firstNumber = receiveValue(firstMessage, firstValue);
-        secondNumber = receiveValue(secondMessage, secondValue);
+        firstNumber = receiveValue(FIRST_MESSAGE, FIRST_VALUE);
+        secondNumber = receiveValue(SECOND_MESSAGE, SECOND_VALUE);
     }
 
     int getFirstValue() {
@@ -45,27 +44,27 @@ public class ValueReceiver {
                     newNumber = Integer.parseInt(temp);
                 } catch (NumberFormatException numEx) {
                     if(checkLine(temp)){
-                        System.out.println(temp + invalidNumber + condition + again);
+                        System.out.println(temp + INVALID_NUMBER + CONDITION + AGAIN);
                     } else {
-                        System.out.println(temp + invalidLine + again);
+                        System.out.println(temp + INVALID_LINE + AGAIN);
                     }
                     continue;
                 } catch (IOException numEx) {
-                    System.out.println(ioError);
+                    System.out.println(IO_ERROR);
                 }
                 break;
             } catch (Exception e) {
-                System.out.println(error);
+                System.out.println(ERROR);
             }
             try {
                 br.close();
             } catch (IOException e) {
-                System.out.println(ioError);
+                System.out.println(IO_ERROR);
             }
             try{
                 stream.close();
             }catch (IOException e){
-                System.out.println(ioError);
+                System.out.println(IO_ERROR);
             }
         }
         System.out.println(currentValue + newNumber);

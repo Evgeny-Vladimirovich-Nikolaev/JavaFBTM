@@ -4,29 +4,31 @@ import java.io.InputStreamReader;
 
 public class Calculator {
 
+    public static final String CHOOSE = "Choose operation, Enter:\n";
+    public static final String ADDITION = "1 to add\n";
+    public static final String SUBTRACTION = "2 to subtract\n";
+    public static final String MULTIPLICATION = "3 to multiply\n";
+    public static final String DIVISION = "4 to divide";
+    public static final String IO_ERROR = "Input Output ERROR!";
+    public static final String ERROR = "SOMETHING WENT WRONG!";
+
     private int first, second;
     private String line, result;
-    private String choose = "Choose operation, Enter:\n";
-    private String addition = "1 to add\n";
-    private String subtraction = "2 to subtract\n";
-    private String multiplication = "3 to multiply\n";
-    private String division = "4 to divide";
-    private String ioError = "Input output error";
-    private String error = "Something went wrong";
+
 
 
     Calculator(int first, int second) {
         this.first = first;
         this.second = second;
         sendMessage();
-        read();
+        parseLine();
     }
 
     private void sendMessage(){
-        System.out.println(choose + addition + subtraction + multiplication + division);
+        System.out.println(CHOOSE + ADDITION + SUBTRACTION + MULTIPLICATION + DIVISION);
     }
 
-    private void read(){
+    private void parseLine(){
         InputStreamReader stream = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(stream);
         boolean isReady;
@@ -35,7 +37,7 @@ public class Calculator {
             try {
                 isReady = stream.ready();
             } catch (IOException e) {
-                System.out.println(ioError);
+                System.out.println(IO_ERROR);
                 continue;
             }
             if(!isReady){
@@ -44,10 +46,11 @@ public class Calculator {
             try{
                 line = br.readLine();
             } catch (IOException e) {
-                System.out.println(ioError);
+                System.out.println(IO_ERROR);
                 continue;
             } catch (Exception exp){
-                System.out.println(error);
+                System.out.println(ERROR);
+               break;
             }
             switch (line) {
                 case "1" -> add();
@@ -64,7 +67,7 @@ public class Calculator {
     }
 
     private void add(){
-       result = Long.toString((long)first + second);
+        result = Long.toString((long)first + second);
     }
 
     private void subtract(){

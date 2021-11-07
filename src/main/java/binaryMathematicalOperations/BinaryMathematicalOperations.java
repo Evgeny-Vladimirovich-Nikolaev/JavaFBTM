@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 public class BinaryMathematicalOperations {
 
     private int first, second;
-    private String message = "Enter Y to continue or N to exit";
-    private String ioError = "Input output error";
-    private String error = "Something went wrong";
+    public static final String MESSAGE = "Enter Y to continue or N to exit";
+    public static final String IO_ERROR = "Input Output ERROR!";
+    public static final String ERROR = "SOMETHING WENT WRONG!";
 
     BinaryMathematicalOperations() {
         initOperation();
@@ -36,13 +36,13 @@ public class BinaryMathematicalOperations {
         InputStreamReader stream = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(stream);
 
-        System.out.println(message);
+        System.out.println(MESSAGE);
 
         while (true) {
             try {
                 isReady = stream.ready();
             } catch (IOException e) {
-                System.out.println(ioError);
+                System.out.println(IO_ERROR);
                 continue;
             }
             if (!isReady) {
@@ -51,20 +51,19 @@ public class BinaryMathematicalOperations {
             try {
                 line = br.readLine();
             } catch (IOException e) {
-                System.out.println(ioError);
+                System.out.println(IO_ERROR);
                 continue;
             } catch (Exception exp) {
-                System.out.println(error);
+                System.out.println(ERROR);
             }
-            if (line.equals("Y")){
+            if (line.equals("Y") || line.equals("y")) {
                 return true;
-            }else if (line.equals("N")){
+            } else if (line.equals("N") || line.equals("n")) {
                 return false;
-            }else{
-                System.out.println(message);
+            } else {
+                System.out.println(MESSAGE);
                 continue;
             }
         }
     }
 }
-
