@@ -45,7 +45,7 @@ public class ValueReceiver {
                 try {temp = br.readLine();
                     newNumber = Integer.parseInt(temp);
                 } catch(NumberFormatException numEx) {
-                    if(checkLine(temp)) {
+                    if(temp.length() != 0 && checkLine(temp)) {
                         System.out.println(temp
                                 + INVALID_NUMBER
                                 + CONDITION
