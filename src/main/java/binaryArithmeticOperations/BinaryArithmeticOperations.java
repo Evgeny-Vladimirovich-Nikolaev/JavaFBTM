@@ -56,9 +56,9 @@ public class BinaryArithmeticOperations {
             } catch(Exception exp) {
                 System.out.println(ERROR);
             }
-            if(line.equals("Y") || line.equals("y")) {
+            if(line.equalsIgnoreCase("Y")) {
                 return true;
-            } else if(line.equals("N") || line.equals("n")) {
+            } else if(line.equalsIgnoreCase("N")) {
                 return false;
             } else {
                 System.out.println(MESSAGE);

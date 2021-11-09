@@ -17,7 +17,7 @@ public class ValueReceiver {
     public static final String IO_ERROR = "Input Output ERROR!";
     public static final String ERROR = "SOMETHING WENT WRONG!";
 
-    private int firstNumber, secondNumber;
+    private final int firstNumber, secondNumber;
 
     ValueReceiver() {
         firstNumber = receiveValue(FIRST_MESSAGE, FIRST_VALUE);
