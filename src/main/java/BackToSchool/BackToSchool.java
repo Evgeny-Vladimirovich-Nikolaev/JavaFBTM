@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 
 public class BackToSchool {
-    public static BufferedReader bufferedReader;
+    //public static BufferedReader bufferedReader;
 
     public static void main(String[] args) {
         initReader();
@@ -12,14 +12,11 @@ public class BackToSchool {
     }
 
     public static void initReader() {
-        bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        //bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     }
 
     public static void closeReader() {
-        try {
-            bufferedReader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+         ValueReceiver2.close();
+
     }
 }
