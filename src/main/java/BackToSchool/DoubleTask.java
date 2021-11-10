@@ -1,16 +1,31 @@
 public class DoubleTask {
 
-    private void selectTask() {
-        int choise;
+    static int choice;
+
+    public static void main(String[] args) {
+        selectTask();
+        solveProblem();
+    }
+
+    static void selectTask() {
         while(true) {
-            choise = ValueReceiver2.receiveInt();
-            if(choise < 0 || choise > 2) {
-                System.out.println("Выберите действие:");
+            System.out.println(Message.CHOOSE_ACTION.getMsg());
+            choice = ValueReceiver2.receiveInt();
+            if(choice < 0 || choice > 2) {
                 continue;
             }
             break;
         }
-        if(choise == 1) new QuadraticEquation();
-        else if (choise == 2) new Factorial();
+    }
+
+    static void solveProblem() {
+        if(choice == 1) {
+            new QuadraticEquation();
+        } else if(choice == 2) {
+            System.out.println(new Factorial());
+        }
+        else {
+            ValueReceiver2.close();
+        }
     }
 }

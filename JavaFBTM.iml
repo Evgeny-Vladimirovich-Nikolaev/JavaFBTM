@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/firstProgramOnJava" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/binaryArithmeticOperations" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/BackToSchool" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/palindrome" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

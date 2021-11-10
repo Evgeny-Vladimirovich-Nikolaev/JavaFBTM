@@ -9,14 +9,13 @@ public class ValueReceiver2  {
     public static int receiveInt() {
         int value = -1;
         while(true) {
-            System.out.println("ValueReceiver2.receiveInt()");
             try {
                 value = Integer.parseInt(inputReader.readLine());
             } catch(NumberFormatException e) {
-                e.printStackTrace();
+                System.out.println(Message.INVALID_NUMBER.getMsg());
                 continue;
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(Message.IO_ERROR.getMsg());
                 continue;
             }
             break;
@@ -24,7 +23,28 @@ public class ValueReceiver2  {
         return value;
         }
 
-        public static void close() {
-            //TO DO
+    public static Long receiveLong() {
+        Long value = -1L;
+        while(true) {
+            try {
+                value = Long.parseLong(inputReader.readLine());
+            } catch(NumberFormatException e) {
+                System.out.println(Message.INVALID_NUMBER.getMsg());
+                continue;
+            } catch (IOException e) {
+                System.out.println(Message.IO_ERROR.getMsg());
+                continue;
+            }
+            break;
         }
+        return value;
+    }
+
+    public static void close() {
+        try {
+            inputReader.close();
+        } catch (IOException e) {
+            System.out.println(Message.IO_ERROR.getMsg());
+        }
+    }
 }
