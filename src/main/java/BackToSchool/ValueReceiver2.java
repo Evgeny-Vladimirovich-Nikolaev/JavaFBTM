@@ -1,47 +1,30 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
-public class ValueReceiver2 implements Closeable {
+public class ValueReceiver2  {
 
-    private int value;
-    private int[] values;
+    public static final BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
 
-    public ValueReceiver2() {
-        receiveValue();
-    }
-
-    public ValueReceiver2(int[] values) {
-        this.values = values;
-    }
-
-    int getValue() {
-        return value;
-    }
-
-    private void receiveValue() {
+    public static int receiveInt() {
+        int value = -1;
         while(true) {
-            System.out.println("ValueReceiver2.receiveValue()");
-            try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
-                if(br.ready()){
-                    br.read();
-                    String line = br.readLine();
-                    value = Integer.parseInt(line);
-                    System.out.println("ValueReceiver2.receiveValue()");
-                    break;
-                }
-                continue;
+            System.out.println("ValueReceiver2.receiveInt()");
+            try {
+                value = Integer.parseInt(inputReader.readLine());
             } catch(NumberFormatException e) {
-                System.out.println(e);
+                e.printStackTrace();
                 continue;
-            } catch(Exception e) {
-                System.out.println(e);
+            } catch (IOException e) {
+                e.printStackTrace();
                 continue;
             }
+            break;
         }
-    }
+        return value;
+        }
 
-
-    @Override
-    public void close() throws IOException {
-
-    }
+        public static void close() {
+            //TO DO
+        }
 }
