@@ -12,10 +12,10 @@ public class ValueReceiver2  {
             try {
                 value = Integer.parseInt(inputReader.readLine());
             } catch(NumberFormatException numEx) {
-                //System.out.println(Message.INVALID_NUMBER.getMsg());
+                System.out.println(Message.INVALID_NUMBER.getMsg());
                 continue;
             } catch(IOException ioEx) {
-                //System.out.println(Message.IO_ERROR.getMsg());
+                System.out.println(Message.IO_ERROR.getMsg());
                 continue;
             }
             break;
@@ -27,7 +27,7 @@ public class ValueReceiver2  {
         try {
             inputReader.close();
         } catch (IOException e) {
-            //System.out.println(Message.IO_ERROR.getMsg());
+            System.out.println(Message.IO_ERROR.getMsg());
         }
     }
 }

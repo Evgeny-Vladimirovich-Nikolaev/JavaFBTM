@@ -9,7 +9,7 @@ public class DoubleTask {
 
     static void selectTask() {
         while(true) {
-            //System.out.println(Message.CHOOSE_ACTION.getMsg());
+            System.out.println(Message.CHOOSE_ACTION.getMsg());
             choice = ValueReceiver2.receiveInt();
             if(choice < 0 || choice > 2) {
                 continue;

@@ -12,7 +12,7 @@ public class Factorial {
 
     private void receive() {
         while(true) {
-            //System.out.println(Message.INIT_POSITIVE_VALUE.getMsg());
+            System.out.println(Message.INIT_NOT_NEGATIVE_INTEGER.getMsg());
             value = ValueReceiver2.receiveInt();
             if(value < 0) {
                 continue;
@@ -26,7 +26,7 @@ public class Factorial {
 
     private boolean isAgree(int i) {
         while(true) {
-            //System.out.println(i + Message.RESUME.getMsg());
+            System.out.println(i + Message.RESUME.getMsg());
             int choice = ValueReceiver2.receiveInt();
             if(choice != 1 && choice != 2) {
                 continue;
