@@ -6,14 +6,17 @@ public class Factorial {
 
     public Factorial() {
         receive();
-        result = calculateFactorial(value);
+        calculateFactorial();
         writeMessage();
     }
 
     private void receive() {
         while(true) {
-            System.out.println(Message.INIT_POSITIVE_VALUE.getMsg());
+            //System.out.println(Message.INIT_POSITIVE_VALUE.getMsg());
             value = ValueReceiver2.receiveInt();
+            if(value < 0) {
+                continue;
+            }
             if(value > 5000 && !isAgree(value)) {
                 continue;
             }
@@ -23,7 +26,7 @@ public class Factorial {
 
     private boolean isAgree(int i) {
         while(true) {
-            System.out.println(i + Message.RESUME.getMsg());
+            //System.out.println(i + Message.RESUME.getMsg());
             int choice = ValueReceiver2.receiveInt();
             if(choice != 1 && choice != 2) {
                 continue;
@@ -37,12 +40,11 @@ public class Factorial {
         else return (i * calculateFactorial(i - 1));
     }*/
 
-    private double calculateFactorial (int v) {
-        double res = 1;
-        for(int i = 2; i <= v; i++ ) {
-            res *= i;
+    private void calculateFactorial () {
+        result = 1;
+        for(int i = 2; i <= value; i++ ) {
+            result *= i;
         }
-        return res;
     }
 
     private void writeMessage() {

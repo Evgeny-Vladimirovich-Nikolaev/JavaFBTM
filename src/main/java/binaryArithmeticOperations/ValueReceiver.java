@@ -1,4 +1,4 @@
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -78,7 +78,7 @@ public class ValueReceiver {
         return newNumber;
     }
 
-    private boolean checkLine(@NotNull String line) {
+    private boolean checkLine(/*@NotNull*/ String line) {
         char[] ch = line.toCharArray();
         if(ch[0] != 45 && (ch[0] < 48 || ch[0] > 57)) {
             return false;
