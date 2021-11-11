@@ -51,8 +51,8 @@ public class QuadraticEquation {
     }
 
     private int countRoot(int multiplier) {
-        System.out.println((multiplier * Math.sqrt(Math.pow(b, 2) - (4 * a * c)) - b)  / a / 2 + "ответ");
-        return (int) (multiplier * Math.sqrt(Math.pow(b, 2) - (4 * a * c)) / a / 2);
+        System.out.println((int)(multiplier * Math.sqrt(discriminant) - b)  / a / 2 + "ответ");
+        return  ((int)(multiplier * Math.sqrt(discriminant) -b) / a / 2);
     }
 
 }
