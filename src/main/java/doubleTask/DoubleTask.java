@@ -3,15 +3,10 @@ public class DoubleTask {
     static int choice;
 
     public static void main(String[] args) {
-        while(true){
+        do {
             selectTask();
             solveProblem();
-            if(choice != 0){
-                continue;
-            }
-            ValueReceiver2.close();
-            break;
-        }
+        } while(resume());
     }
 
     static void selectTask() {
@@ -31,8 +26,12 @@ public class DoubleTask {
         } else if(choice == 2) {
             System.out.println(new Factorial());
         }
-        else {
+    }
+
+    static boolean resume() {
+        if(choice == 0) {
             ValueReceiver2.close();
         }
+        return choice != 0;
     }
 }

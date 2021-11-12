@@ -26,7 +26,7 @@ public class Factorial {
 
     private boolean isAgree(int i) {
         while(true) {
-            System.out.println(i + Message.RESUME.getMsg());
+            System.out.print(i + Message.RESUME.getMsg());
             int choice = ValueReceiver2.receiveInt();
             if(choice != 1 && choice != 2) {
                 continue;
@@ -34,11 +34,6 @@ public class Factorial {
             return choice == 1;
         }
     }
-
-    /*private double calculateFactorial (int i) {
-        if(i <= 0) return 1.0;
-        else return (i * calculateFactorial(i - 1));
-    }*/
 
     private void calculateFactorial () {
         result = 1;

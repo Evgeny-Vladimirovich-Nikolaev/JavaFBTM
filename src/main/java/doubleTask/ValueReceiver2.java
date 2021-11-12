@@ -8,20 +8,37 @@ public class ValueReceiver2  {
 
     public static int receiveInt() {
         int value;
+        String temp = "";
         while(true) {
             try {
-                value = Integer.parseInt(inputReader.readLine());
+                temp = inputReader.readLine();
+                value = Integer.parseInt(temp);
             } catch(NumberFormatException numEx) {
-                System.out.println(Message.INVALID_NUMBER.getMsg());
+                if(temp.length() != 0 && checkLine(temp)) {
+                    System.out.println(temp
+                            + Message.INVALID_NUMBER.getMsg());
+                } else {
+                    System.out.println(temp + Message.INVALID_LINE.getMsg());
+                }
                 continue;
             } catch(IOException ioEx) {
                 System.out.println(Message.IO_ERROR.getMsg());
                 continue;
-            }
-            break;
+            }return value;
         }
-        return value;
+    }
+
+    static boolean checkLine(/*@NotNull*/ String line) {
+        char[] ch = line.toCharArray();
+        if(ch[0] != 45 && (ch[0] < 48 || ch[0] > 57)) {
+            return false;
         }
+        for(int i = 1; i < ch.length; i++) {
+            if(ch[i] < 48 || ch[i] > 57)
+                return false;
+        }
+        return true;
+    }
 
    public static void close() {
         try {

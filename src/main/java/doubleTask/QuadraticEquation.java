@@ -92,8 +92,6 @@ public class QuadraticEquation {
 
 class QuadraticEquationExpression {
 
-    static String expression;
-
     static String getExpression(int a, int b, int c){
         StringBuilder sb = new StringBuilder();
         sb.append(writeNominal(a, "", "","x^2"));
