@@ -12,7 +12,7 @@ public class Factorial {
 
     private void receive() {
         while(true) {
-            System.out.println(Message.INIT_NOT_NEGATIVE_INTEGER.getMsg());
+            System.out.println(Message.INIT_NOT_NEGATIVE.getMsg());
             value = ValueReceiver2.receiveInt();
             if(value < 0) {
                 continue;
@@ -48,13 +48,17 @@ public class Factorial {
     }
 
     private void writeMessage() {
-        StringBuilder sb = new StringBuilder(Integer.toString(value));
-        sb.append("! = ");
-        sb.append(Double.toString(result));
-        if(".0".equals(sb.substring(sb.length()-2))){
-            sb.delete(sb.length()-2, sb.length());
+        message = value
+                + "! = "
+                + formatResult();
+    }
+
+    private StringBuilder formatResult() {
+        StringBuilder res = new StringBuilder(Double.toString(result));
+        if(".0".equals(res.substring(res.length()-2))){
+            res.delete(res.length()-2, res.length());
         }
-        message = sb.toString();
+        return res;
     }
 
     @Override

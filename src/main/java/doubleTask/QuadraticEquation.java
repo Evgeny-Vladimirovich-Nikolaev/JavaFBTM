@@ -10,9 +10,9 @@ public class QuadraticEquation {
     }
 
     private void initValues(){
-        a = initCoef(true, Message.INIT_NOT_0_VALUE.getMsg());
-        b = initCoef(false, Message.INIT_INTEGER_VALUE.getMsg());
-        c = initCoef(false, Message.INIT_INTEGER_VALUE.getMsg());
+        a = initCoef(true, Message.INIT_NOT_0.getMsg());
+        b = initCoef(false, Message.INIT_INTEGER.getMsg());
+        c = initCoef(false, Message.INIT_INTEGER.getMsg());
     }
 
     private int initCoef(boolean not_0, String msg) {
@@ -35,39 +35,99 @@ public class QuadraticEquation {
 
     private void findDiscriminant() {
         discriminant = Math.pow(b, 2) - 4 * a * c;
-        System.out.println(discriminant);
     }
 
     private void findRoots() {
         if(discriminant < 0) {
             writeMessage();
-            System.out.println(QuadraticEquationExpression.getExpression(a, b, c));
         } else if(discriminant == 0) {
             root1 = countRoot(0);
-            System.out.println(QuadraticEquationExpression.getExpression(a, b, c));
-            //writeMessage(root1);
+            writeMessage(root1);
         } else {
             root1 = countRoot(1);
             root2 = countRoot(-1);
-            System.out.println(QuadraticEquationExpression.getExpression(a, b, c));
-            //writeMessage(root1, root2);
+            writeMessage(root1, root2);
         }
     }
 
     private double countRoot(int multiplier) {
-        System.out.println((- b + multiplier * Math.sqrt(discriminant)) / (2 * a));
         return  (- b + multiplier * Math.sqrt(discriminant)) / (2 * a);
     }
 
     private void writeMessage() {
-        message = Message.NO_ROOTS.getMsg();
-        System.out.println(message);
+        message = Message.EQUATION.getMsg()
+                + QuadraticEquationExpression.getExpression(a, b, c)
+                + Message.NO_ROOTS.getMsg();
     }
 
-    private void writeMessage(int r) {
-
+    private void writeMessage(double r) {
+        message = Message.EQUATION.getMsg()
+                + QuadraticEquationExpression.getExpression(a, b, c)
+                + Message.ONE_ROOT.getMsg()
+                + formatResult(r);
     }
 
+    private void writeMessage(double r1, double r2) {
+        message = Message.EQUATION.getMsg()
+                + QuadraticEquationExpression.getExpression(a, b, c)
+                + Message.TWO_ROOTS.getMsg()
+                + formatResult(r1)
+                + "\nx2 = "
+                + formatResult(r2);
+    }
 
+    private StringBuilder formatResult(double r) {
+        StringBuilder res = new StringBuilder(Double.toString(r));
+        if(".0".equals(res.substring(res.length()-2))){
+            res.delete(res.length()-2, res.length());
+        }
+        return res;
+    }
 
+    @Override
+    public String toString() {
+        return message;
+    }
 }
+
+class QuadraticEquationExpression {
+
+    static String expression;
+
+    static String getExpression(int a, int b, int c){
+        StringBuilder sb = new StringBuilder();
+        sb.append(writeNominal(a, "", "","x^2"));
+        if(b > 0){
+            sb.append(writeNominal(b, " + ", " ","x"));
+        } else if(b < 0) {
+            sb.append(writeNominal(b, " - "," " ,"x"));
+        }
+        if(c == 0){
+            return sb.append(" = 0").toString();
+        }
+        if(c > 0) {
+            sb.append(" + ");
+        } else {
+            sb.append(" - ");
+        }
+        sb.append(Math.abs(c));
+        sb.append(" = 0");
+        return sb.toString();
+    }
+
+    static String writeNominal(int nom, String operator, String space, String power) {
+        StringBuilder nominal = new StringBuilder();
+        if(nom < 0) {
+            nominal.append(" -");
+            nominal.append(space);
+        } else {
+            nominal.append(operator);
+        }
+        if(nom < 2 && nom > -2) {
+            return nominal.append(power).toString();
+        } else {
+            return nominal.append(Math.abs(nom)).append(power).toString();
+        }
+    }
+}
+

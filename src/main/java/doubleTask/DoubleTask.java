@@ -3,8 +3,15 @@ public class DoubleTask {
     static int choice;
 
     public static void main(String[] args) {
-        selectTask();
-        solveProblem();
+        while(true){
+            selectTask();
+            solveProblem();
+            if(choice != 0){
+                continue;
+            }
+            ValueReceiver2.close();
+            break;
+        }
     }
 
     static void selectTask() {
@@ -20,7 +27,7 @@ public class DoubleTask {
 
     static void solveProblem() {
         if(choice == 1) {
-            new QuadraticEquation();
+            System.out.println(new QuadraticEquation());
         } else if(choice == 2) {
             System.out.println(new Factorial());
         }
