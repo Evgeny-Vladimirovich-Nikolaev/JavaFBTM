@@ -21,7 +21,7 @@ public class QuadraticEquation {
             System.out.println(msg);
             coef = ValueReceiver2.receiveInt();
             if(coef == 0 && not_0) {
-                System.out.println("Первый коэффициент не может быть равен 0");
+                System.out.println(Message.INVALID_COEFFICIENT.getMsg());
                 continue;
             }break;
         }
@@ -29,13 +29,8 @@ public class QuadraticEquation {
     }
 
     private void solveEquation() {
-        checkVariables();
         findDiscriminant();
         findRoots();
-    }
-
-    private void checkVariables() {
-        System.out.println((a + " " + b + " " + c));
     }
 
     private void findDiscriminant() {
@@ -45,14 +40,17 @@ public class QuadraticEquation {
 
     private void findRoots() {
         if(discriminant < 0) {
-            //writeMessage();
-        } else if(discriminant > 0) {
+            writeMessage();
+            System.out.println(QuadraticEquationExpression.getExpression(a, b, c));
+        } else if(discriminant == 0) {
+            root1 = countRoot(0);
+            System.out.println(QuadraticEquationExpression.getExpression(a, b, c));
+            //writeMessage(root1);
+        } else {
             root1 = countRoot(1);
             root2 = countRoot(-1);
+            System.out.println(QuadraticEquationExpression.getExpression(a, b, c));
             //writeMessage(root1, root2);
-        } else {
-            root1 = countRoot(0);
-            // writeMessage(root1);
         }
     }
 
@@ -60,5 +58,16 @@ public class QuadraticEquation {
         System.out.println((- b + multiplier * Math.sqrt(discriminant)) / (2 * a));
         return  (- b + multiplier * Math.sqrt(discriminant)) / (2 * a);
     }
+
+    private void writeMessage() {
+        message = Message.NO_ROOTS.getMsg();
+        System.out.println(message);
+    }
+
+    private void writeMessage(int r) {
+
+    }
+
+
 
 }

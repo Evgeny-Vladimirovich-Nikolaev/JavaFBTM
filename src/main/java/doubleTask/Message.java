@@ -12,10 +12,14 @@ public enum Message {
     INIT_NOT_NEGATIVE_INTEGER("Введите неотрицательное целое число"),
     INVALID_NUMBER("Неправильный формат числа"),
     INVALID_LINE(" не является числом"),
+    INVALID_COEFFICIENT("Первый коэффициент не может быть равен 0"),
     RESUME(" - слишком большое число\n" +
             "1 - продолжить\n" +
             "2 - ввести другое число\n"),
+    NO_ROOTS("Уравнение не имеет корней"),
+    APPROXIMATELY("≈"),
     OVERFLOW("Ошибка переполнения памяти");
+
 
     private String msg;
 
