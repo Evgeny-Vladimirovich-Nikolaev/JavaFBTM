@@ -94,7 +94,7 @@ class QuadraticEquationExpression {
 
     static String getExpression(int a, int b, int c){
         StringBuilder sb = new StringBuilder();
-        sb.append(writeNominal(a, "", "","x^2"));
+        sb.append(writeNominal(a, "", "","x^"));
         if(b > 0){
             sb.append(writeNominal(b, " + ", " ","x"));
         } else if(b < 0) {
