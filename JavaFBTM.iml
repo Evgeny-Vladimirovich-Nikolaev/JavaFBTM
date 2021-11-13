@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/binaryArithmeticOperations" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/doubleTask" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/palindrome" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/squareRoot" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
