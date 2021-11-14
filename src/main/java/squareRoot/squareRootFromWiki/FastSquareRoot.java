@@ -1,14 +1,15 @@
-public class SquareRoot {
+public class FastSquareRoot {
     public static void main(String[] args) {
-        for(int i = 0; i < 45000; i++) {
-            System.out.print(i + " " + (i * i) + " " + findRoot(i * i) + " ");
-            System.out.println( i == findRoot(i * i));
-        }
+        for(int i = 0; i < 45000; i += 111) {
+            System.out.println( i + " --> " );
+            findRoot(i * i);
+       }
     }
 
-    private static int findRoot(int num) {
+    public static int findRoot(int num) {
         int res = 0;
         int bit =  1 << 30;
+        System.out.println(num);
         while (bit != 0) {
             if(num >= res + bit) {
                 num -= res + bit;
@@ -18,6 +19,7 @@ public class SquareRoot {
             }
             bit >>= 2;
             }
+        System.out.println(res);
         return res;
         }
     }
