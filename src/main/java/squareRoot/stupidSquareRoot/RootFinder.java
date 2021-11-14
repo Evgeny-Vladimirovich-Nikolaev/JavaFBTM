@@ -1,9 +1,23 @@
 public class RootFinder
 {
-    private int num, max, min, root;
+    private int num, max, root;
+    private int min = 2;
+    private String message;
 
     RootFinder(int num) {
         this.num = num;
+        if(chekNum()) {
+            countMaximum();
+            findRoot();
+        }
+    }
+
+    private boolean chekNum() {
+        if(num < 2) {
+            root = num;
+            writeMessage(true);
+        }
+        return num > 1;
     }
 
     private void countMaximum() {
@@ -14,6 +28,36 @@ public class RootFinder
             counter++;
         }
         counter /= 2;
+        max >>= --counter;
+    }
 
+    private void findRoot() {
+        while(min != max) {
+            int avg = (max + min) / 2;
+            if((long)avg * avg > num) {
+                max = avg;
+            } else if((long)avg * avg < num) {
+                if(min < avg)  min = avg;
+                 else break;
+            } else {
+                root = avg;
+                writeMessage(true);
+                return;
+            }
+        }
+        writeMessage(false);
+    }
+
+    private void writeMessage(boolean isRational) {
+        if(isRational) {
+            message = String.format(Message.RATIONAL_ROOT.getMsg(), num, root);
+        } else {
+            message = String.format(Message.IRRATIONAL_ROOT.getMsg(), num);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return message;
     }
 }

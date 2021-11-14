@@ -3,7 +3,6 @@ public class SquareRootMain {
     public static int num;
 
     public static void main(String[] args) {
-
         do {
             initValue();
             calculate();
@@ -12,7 +11,8 @@ public class SquareRootMain {
 
     static void initValue() {
         while(true) {
-            System.out.println(Message.INIT_NOT_NEGATIVE.getMsg());
+            System.out.println(Message.INIT_NOT_NEGATIVE.getMsg()
+                    + Message.CONDITION.getMsg());
             num = ValueReceiver2.receiveInt();
             if(num < 0) {
                 continue;
@@ -21,7 +21,7 @@ public class SquareRootMain {
     }
 
     static void calculate() {
-        new RootFinder(num);
+        System.out.println(new RootFinder(num));
     }
 
     static boolean resume() {

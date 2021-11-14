@@ -10,6 +10,7 @@ public enum Message {
     INIT_NOT_0("Введите целое число не равное 0"),
     INIT_INTEGER("Введите целое число"),
     INIT_NOT_NEGATIVE("Введите неотрицательное целое число"),
+    CONDITION(" не более 2147483647"),
     INVALID_NUMBER(" - Неправильный формат числа"),
     INVALID_LINE(" не является числом"),
     INVALID_COEFFICIENT("Первый коэффициент не может быть равен 0"),
@@ -21,7 +22,9 @@ public enum Message {
     EQUATION("Уравнение "),
     NO_ROOTS(" не имеет действительных корней"),
     ONE_ROOT(" имеет один корень:\nx = "),
-    TWO_ROOTS(" имеет два корня:\nx1 = ");
+    TWO_ROOTS(" имеет два корня:\nx1 = "),
+    RATIONAL_ROOT("Корень квадратный из %s равен %s "),
+    IRRATIONAL_ROOT("Квадратный корень из %s не является рациональным числом");
 
 
     private String msg;

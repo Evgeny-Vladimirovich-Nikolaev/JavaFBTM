@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/doubleTask" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/palindrome" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/squareRoot" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/squareRoot/squareRootFromWiki" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/squareRoot/stupidSquareRoot" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
