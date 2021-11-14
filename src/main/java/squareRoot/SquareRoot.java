@@ -1,22 +1,24 @@
 public class SquareRoot {
     public static void main(String[] args) {
-//        int sq = 1975269136;
-//        for(int i = 0; i < 2147000000; i++) {
-//            if((long)i * i == sq) {
-//                System.out.println(i + " корень найден");
-//            }
-//        }
-        int k = 46383647;
-        System.out.println(k);
-        for(int i = 0; i < 35; i++) {
-            k >>=1;
-            System.out.println(k);
-        }
-        k = 46383647;
-        System.out.println(k);
-        for(int i = 0; i < 35; i++) {
-            k >>>=1;
-            System.out.println(k);
+        for(int i = 0; i < 45000; i++) {
+            System.out.print(i + " " + (i * i) + " " + findRoot(i * i) + " ");
+            System.out.println( i == findRoot(i * i));
         }
     }
-}
+
+    private static int findRoot(int num) {
+        int res = 0;
+        int bit =  1 << 30;
+        while (bit != 0) {
+            if(num >= res + bit) {
+                num -= res + bit;
+                res = (res >> 1) + bit;
+            } else {
+                res >>= 1;
+            }
+            bit >>= 2;
+            }
+        return res;
+        }
+    }
+
