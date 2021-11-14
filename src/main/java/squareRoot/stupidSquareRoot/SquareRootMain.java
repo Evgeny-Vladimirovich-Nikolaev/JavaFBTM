@@ -21,7 +21,7 @@ public class SquareRootMain {
     }
 
     static void calculate() {
-
+        new RootFinder(num);
     }
 
     static boolean resume() {
