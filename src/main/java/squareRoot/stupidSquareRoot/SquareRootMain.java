@@ -25,6 +25,15 @@ public class SquareRootMain {
     }
 
     static boolean resume() {
-        return true;
+        int choice;
+        while(true) {
+            System.out.print(Message.RESUME.getMsg());
+            choice = ValueReceiver2.receiveInt();
+            if(choice < 0 || choice > 1) {
+                continue;
+            }
+            break;
+        }
+        return choice == 1;
     }
 }

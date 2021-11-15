@@ -26,7 +26,7 @@ public class Factorial {
 
     private boolean isAgree(int i) {
         while(true) {
-            System.out.print(i + Message.RESUME.getMsg());
+            System.out.print(i + Message.TOO_MUCH.getMsg());
             int choice = ValueReceiver2.receiveInt();
             if(choice != 1 && choice != 2) {
                 continue;
