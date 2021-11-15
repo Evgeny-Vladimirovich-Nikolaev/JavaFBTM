@@ -1,6 +1,6 @@
 public class SquareRootMain {
 
-    public static int num;
+    static int num;
 
     public static void main(String[] args) {
         do {
