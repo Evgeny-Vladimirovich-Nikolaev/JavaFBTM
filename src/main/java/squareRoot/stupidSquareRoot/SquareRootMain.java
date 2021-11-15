@@ -16,7 +16,8 @@ public class SquareRootMain {
             num = ValueReceiver2.receiveInt();
             if(num < 0) {
                 continue;
-            }break;
+            }
+            break;
         }
     }
 

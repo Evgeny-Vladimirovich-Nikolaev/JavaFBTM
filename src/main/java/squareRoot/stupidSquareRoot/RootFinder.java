@@ -1,7 +1,14 @@
+/**
+ * В классе производится подбор значения квадратного корня путем бинарного поиска.
+ * В методе countMaximum() определяется начальный максимум,
+ * начальный минимум инициируется со значением 2
+ */
+
+
 public class RootFinder
 {
-    private int num, max, root;
-    private int min = 2;
+    private int num, max, root;               //входное значение, максимум, квадратный корень
+    private int min = 2;                            //начальный минимум
     private String message;
 
     RootFinder(int num) {
@@ -15,11 +22,13 @@ public class RootFinder
     private boolean chekNum() {
         if(num < 2) {
             root = num;
-            writeMessage(true);
+            writeMessage(false);
         }
         return num > 1;
     }
 
+    //начальный максимум определяется по количеству значимых битов входного числа (num)
+    // количество значимых битов максимума описывается формулой bits(num) / 2 + 1
     private void countMaximum() {
         int temp =  max = num;
         int counter = 0;
@@ -37,19 +46,22 @@ public class RootFinder
             if((long)avg * avg > num) {
                 max = avg;
             } else if((long)avg * avg < num) {
-                if(min < avg)  min = avg;
-                 else break;
+                if(min < avg)  {
+                    min = avg;
+                } else {
+                    break;
+                }
             } else {
                 root = avg;
-                writeMessage(true);
+                writeMessage(false);
                 return;
             }
         }
-        writeMessage(false);
+        writeMessage(true);
     }
 
     private void writeMessage(boolean isRational) {
-        if(isRational) {
+        if(!isRational) {
             message = String.format(Message.RATIONAL_ROOT.getMsg(), num, root);
         } else {
             message = String.format(Message.IRRATIONAL_ROOT.getMsg(), num);
