@@ -22,7 +22,7 @@ public class RootFinder
     private boolean chekNum() {
         if(num < 2) {
             root = num;
-            writeMessage(false);
+            writeMessage(true);
         }
         return num > 1;
     }
@@ -53,15 +53,15 @@ public class RootFinder
                 }
             } else {
                 root = avg;
-                writeMessage(false);
+                writeMessage(true);
                 return;
             }
         }
-        writeMessage(true);
+        writeMessage(false);
     }
 
     private void writeMessage(boolean isRational) {
-        if(!isRational) {
+        if(isRational) {
             message = String.format(Message.RATIONAL_ROOT.getMsg(), num, root);
         } else {
             message = String.format(Message.IRRATIONAL_ROOT.getMsg(), num);
