@@ -49,7 +49,7 @@ public class ValueReceiver2  {
    public static void close() {
         try {
             inputReader.close();
-        } catch (IOException e) {
+        } catch(IOException e) {
             System.out.println(Message.IO_ERROR.getMsg());
         }
     }
