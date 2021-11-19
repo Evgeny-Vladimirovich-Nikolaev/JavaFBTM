@@ -1,6 +1,6 @@
 public class Fibonacci {
 
-    private int choose;
+    private int choice;
 
     Fibonacci() {
         do {
@@ -9,19 +9,23 @@ public class Fibonacci {
     }
 
     private void selectTask() {
-        while(choose < 0 || choose > 2) {
+        while(choice < 0 || choice > 2) {
             System.out.println("Выберите действие");
-           choose =  ValueReceiver2.receiveInt();
+           choice =  ValueReceiver2.receiveInt();
         }
-        if(choose == 1) {
+        if(choice == 1) {
             findFibonacciItem();
-        } else if(choose == 2) {
+        } else if(choice == 2) {
             findFibonacciSequence();
         }
     }
 
     private void findFibonacciItem() {
-
+        int index = -1;
+        while(index < 0) {
+            index = ValueReceiver2.receiveInt();
+        }
+        FibonacciSequence.getLongItem(index);
     }
 
     private void findFibonacciSequence() {
@@ -29,7 +33,10 @@ public class Fibonacci {
     }
 
     private boolean resume() {
-        return true;
+        if(choice != 0) {
+            selectTask();
+        }
+        return choice !=0 ;
     }
 }
 
