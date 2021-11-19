@@ -13,7 +13,7 @@ public class SquareRootMain {
         while(true) {
             System.out.println(Message.INIT_NOT_NEGATIVE.getMsg()
                     + Message.CONDITION_2.getMsg());
-            num = Receiver.receiveInt();
+            num = ValueReceiver2.receiveInt();
             if(num < 0) {
                 continue;
             }
@@ -29,7 +29,7 @@ public class SquareRootMain {
         int choice;
         while(true) {
             System.out.print(Message.RESUME.getMsg());
-            choice = Receiver.receiveInt();
+            choice = ValueReceiver2.receiveInt();
             if(choice < 0 || choice > 1) {
                 continue;
             }

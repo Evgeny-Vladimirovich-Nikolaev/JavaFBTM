@@ -1,49 +1,47 @@
 public class SimpleSequence {
 
-    private double item;
     private String message;
 
     SimpleSequence(int index) {
-        if(index < 93){
-            item = getLongItem(index);
+        if(index < 94){
+            getLongItem(index);
         } else {
-            item = getDoubleItem(index);
+            getDoubleItem(index);
         }
-        message = writeMessage(index);
     }
 
-    public double getLongItem(int index) {
-        double current = 1,
+    public void getLongItem(int index) {
+        long current = 1,
                 next = 1;
         if(index < 3) {
-            return index - 1;
+            writeMessage(index, (index - 1));
+            return;
         }
+        while(index-- > 2) {
+            long previous = current;
+            current = next;
+            next += previous;
+        }
+        writeMessage(index, current);
+    }
+
+    public void getDoubleItem(int index) {
+        double current = 1,
+                next = 1;
         while(index-- > 2) {
             double previous = current;
             current = next;
             next += previous;
         }
-        return current;
+        writeMessage(index, current);
     }
 
-
-
-    public double getDoubleItem(int index) {
-        double current = 1,
-                next = 1;
-        if(index < 3) {
-            return index - 1;
-        }
-        while(index-- > 2) {
-            double previous = current;
-            current = next;
-            next += previous;
-        }
-        return current;
+    private void writeMessage(int index, long item) {
+        message = Long.toString(item);
     }
 
-    private String writeMessage(int index) {
-        return Double.toString(item);
+    private void writeMessage(int index, double item) {
+        message = Double.toString(item);
     }
 
     @Override

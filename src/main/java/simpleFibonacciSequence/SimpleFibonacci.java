@@ -15,7 +15,7 @@ public class SimpleFibonacci {
                     Message.INIT_INTEGER.getMsg(),
                     Message.CONDITION_1.getMsg(),
                     Message.CONDITION_2.getMsg());
-            index = Receiver.receiveInt();
+            index = ValueReceiver2.receiveInt();
         }
     }
 

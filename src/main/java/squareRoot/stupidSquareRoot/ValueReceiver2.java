@@ -4,11 +4,11 @@ import java.io.IOException;
 
 /**
  * Не удалось реализовать try-with-resources, так как нет возможности повторно открыть System.in.
- * Здесь проблему решил созданием класса Receiver со статическими членами
+ * Здесь проблему решил созданием класса ValueReceiver2 со статическими членами
  * и одноразовым закрытием потоков.
  */
 
-public class Receiver {
+public class ValueReceiver2  {
 
     public static final BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -32,7 +32,7 @@ public class Receiver {
                 continue;
             }return value;
         }
-    }
+   }
 
     static boolean checkLine(/*@NotNull*/ String line) {
         char[] ch = line.toCharArray();
@@ -44,7 +44,7 @@ public class Receiver {
                 return false;
         }
         return true;
-    }
+   }
 
    public static void close() {
         try {
@@ -52,5 +52,5 @@ public class Receiver {
         } catch(IOException e) {
             System.out.println(Message.IO_ERROR.getMsg());
         }
-    }
+   }
 }
