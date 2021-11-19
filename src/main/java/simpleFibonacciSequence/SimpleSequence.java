@@ -4,13 +4,13 @@ public class SimpleSequence {
 
     SimpleSequence(int index) {
         if(index < 94){
-            getLongItem(index);
+            setLongItem(index);
         } else {
-            getDoubleItem(index);
+            setDoubleItem(index);
         }
     }
 
-    public void getLongItem(int index) {
+    public void setLongItem(int index) {
         long current = 1,
                 next = 1;
         if(index < 3) {
@@ -25,7 +25,7 @@ public class SimpleSequence {
         writeMessage(index, current);
     }
 
-    public void getDoubleItem(int index) {
+    public void setDoubleItem(int index) {
         double current = 1,
                 next = 1;
         while(index-- > 2) {
