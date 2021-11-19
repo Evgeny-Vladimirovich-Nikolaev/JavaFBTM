@@ -19,7 +19,7 @@ public class QuadraticEquation {
         int coef;
         while(true) {
             System.out.println(msg);
-            coef = ValueReceiver2.receiveInt();
+            coef = Receiver.receiveInt();
             if(coef == 0 && not_0) {
                 System.out.println(Message.INVALID_COEFFICIENT.getMsg());
                 continue;

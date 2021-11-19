@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/squareRoot" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/squareRoot/squareRootFromWiki" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/squareRoot/stupidSquareRoot" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/simpleFibonacciSequence" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

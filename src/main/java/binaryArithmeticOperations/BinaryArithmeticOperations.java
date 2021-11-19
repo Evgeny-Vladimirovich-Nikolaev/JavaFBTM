@@ -21,7 +21,7 @@ public class BinaryArithmeticOperations {
     }
 
     private void initValues() {
-        ValueReceiver valueReceiver = new ValueReceiver();
+        OldValueReceiver valueReceiver = new OldValueReceiver();
         first = valueReceiver.getFirstValue();
         second = valueReceiver.getSecondValue();
     }

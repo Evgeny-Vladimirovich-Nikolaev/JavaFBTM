@@ -4,11 +4,11 @@ import java.io.IOException;
 
 /**
  * Не удалось реализовать try-with-resources, так как нет возможности повторно открыть System.in.
- * Здесь проблему решил созданием класса ValueReceiver2 со статическими членами
+ * Здесь проблему решил созданием класса Receiver со статическими членами
  * и одноразовым закрытием потоков.
  */
 
-public class ValueReceiver2  {
+public class Receiver {
 
     public static final BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
 

@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ValueReceiver {
+public class OldValueReceiver {
 
     public static final String FIRST_MESSAGE = "Enter two integers between -2147483648 and 2147483647";
     public static final String FIRST_VALUE = "The first number is ";
@@ -19,7 +19,7 @@ public class ValueReceiver {
 
     private final int firstNumber, secondNumber;
 
-    ValueReceiver() {
+    OldValueReceiver() {
         firstNumber = receiveValue(FIRST_MESSAGE, FIRST_VALUE);
         secondNumber = receiveValue(SECOND_MESSAGE, SECOND_VALUE);
     }

@@ -18,7 +18,7 @@ public class FastSquareRoot {
                 res >>= 1;
             }
             bit >>= 2;
-            }
+        }
         System.out.println(res);
         return res;
         }
