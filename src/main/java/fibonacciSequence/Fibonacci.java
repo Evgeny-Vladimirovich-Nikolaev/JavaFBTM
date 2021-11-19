@@ -1,15 +1,35 @@
 public class Fibonacci {
 
-    public static long getLongItem(int index) {
-        long current = 1, next = 1;
-        if(index < 3) {
-            return index - 1;
+    private int choose;
+
+    Fibonacci() {
+        do {
+            selectTask();
+        } while(resume());
+    }
+
+    private void selectTask() {
+        while(choose < 0 || choose > 2) {
+            System.out.println("Выберите действие");
+           choose =  ValueReceiver2.receiveInt();
         }
-        while(index-- > 2) {
-            long previous = current;
-            current = next;
-            next += previous;
+        if(choose == 1) {
+            findFibonacciItem();
+        } else if(choose == 2) {
+            findFibonacciSequence();
         }
-        return current;
+    }
+
+    private void findFibonacciItem() {
+
+    }
+
+    private void findFibonacciSequence() {
+
+    }
+
+    private boolean resume() {
+        return true;
     }
 }
+
