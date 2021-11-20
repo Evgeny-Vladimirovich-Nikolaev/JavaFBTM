@@ -11,8 +11,8 @@ public class DoubleTask {
 
     static void selectTask() {
         while(true) {
-            System.out.println(Message.CHOOSE_ACTION.getMsg());
-            choice = ValueReceiver2.receiveInt();
+            NumberReceiver numberReceiver = new NumberReceiver();
+            choice = numberReceiver.receiveInt(Message.CHOOSE_ACTION.getMsg());
             if(choice < 0 || choice > 2) {
                 continue;
             }
@@ -30,7 +30,7 @@ public class DoubleTask {
 
     static boolean resume() {
         if(choice == 0) {
-            ValueReceiver2.close();
+            NumberReceiver.close();
         }
         return choice != 0;
     }

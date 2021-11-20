@@ -1,10 +1,12 @@
 public class Factorial {
 
+    private NumberReceiver numberReceiver;
     private int value;
     private double result;
     private String message;
 
     public Factorial() {
+        numberReceiver = new NumberReceiver();
         receive();
         calculateFactorial();
         writeMessage();
@@ -12,8 +14,7 @@ public class Factorial {
 
     private void receive() {
         while(true) {
-            System.out.println(Message.INIT_NOT_NEGATIVE.getMsg());
-            value = ValueReceiver2.receiveInt();
+            value = numberReceiver.receiveInt(Message.INIT_NOT_NEGATIVE.getMsg());
             if(value < 0) {
                 continue;
             }
@@ -26,8 +27,7 @@ public class Factorial {
 
     private boolean isAgree(int i) {
         while(true) {
-            System.out.print(i + Message.TOO_MUCH.getMsg());
-            int choice = ValueReceiver2.receiveInt();
+            int choice = numberReceiver.receiveInt(i + Message.TOO_MUCH.getMsg());
             if(choice != 1 && choice != 2) {
                 continue;
             }

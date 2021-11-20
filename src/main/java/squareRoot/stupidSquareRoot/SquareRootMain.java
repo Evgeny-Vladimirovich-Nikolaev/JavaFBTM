@@ -11,9 +11,9 @@ public class SquareRootMain {
 
     static void initValue() {
         while(true) {
-            System.out.println(Message.INIT_NOT_NEGATIVE.getMsg()
+            NumberReceiver numberReceiver = new NumberReceiver();
+            num = numberReceiver.receiveInt(Message.INIT_NOT_NEGATIVE.getMsg()
                     + Message.CONDITION_2.getMsg());
-            num = ValueReceiver2.receiveInt();
             if(num < 0) {
                 continue;
             }
@@ -28,8 +28,8 @@ public class SquareRootMain {
     static boolean resume() {
         int choice;
         while(true) {
-            System.out.print(Message.RESUME.getMsg());
-            choice = ValueReceiver2.receiveInt();
+            NumberReceiver numberReceiver = new NumberReceiver();
+            choice = numberReceiver.receiveInt(Message.RESUME.getMsg());
             if(choice < 0 || choice > 1) {
                 continue;
             }

@@ -1,21 +1,18 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
 
 /**
  * Не удалось реализовать try-with-resources, так как нет возможности повторно открыть System.in.
- * Здесь проблему решил созданием класса ValueReceiver2 со статическими членами
+ * Здесь проблему решил созданием класса NumberReceiver со статическими членами
  * и одноразовым закрытием потоков.
  */
 
-public class ValueReceiver2  {
+public class NumberReceiver extends Receiver{
 
-    public static final BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
-
-    public static int receiveInt() {
+    public int receiveInt(String conditions) {
         int value;
         String temp = "";
         while(true) {
+            System.out.println(conditions);
             try {
                 temp = inputReader.readLine();
                 value = Integer.parseInt(temp);
@@ -46,11 +43,5 @@ public class ValueReceiver2  {
         return true;
    }
 
-   public static void close() {
-        try {
-            inputReader.close();
-        } catch(IOException e) {
-            System.out.println(Message.IO_ERROR.getMsg());
-        }
-   }
+
 }

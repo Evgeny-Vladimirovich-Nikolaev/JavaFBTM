@@ -17,9 +17,9 @@ public class QuadraticEquation {
 
     private int initCoef(boolean not_0, String msg) {
         int coef;
+        NumberReceiver numberReceiver = new NumberReceiver();
         while(true) {
-            System.out.println(msg);
-            coef = ValueReceiver2.receiveInt();
+            coef = numberReceiver.receiveInt(msg);
             if(coef == 0 && not_0) {
                 System.out.println(Message.INVALID_COEFFICIENT.getMsg());
                 continue;

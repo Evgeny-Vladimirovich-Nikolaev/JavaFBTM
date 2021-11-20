@@ -10,12 +10,12 @@ public class SimpleFibonacci {
     }
 
     private static void initIndex() {
+        NumberReceiver numberReceiver = new NumberReceiver();
         while(index < 1) {
-            System.out.printf("%s%s%s%n",
+            index = numberReceiver.receiveInt(String.format("%s%s%s%n",
                     Message.INIT_INTEGER.getMsg(),
                     Message.CONDITION_1.getMsg(),
-                    Message.CONDITION_2.getMsg());
-            index = ValueReceiver2.receiveInt();
+                    Message.CONDITION_2.getMsg()));
         }
     }
 
@@ -25,7 +25,16 @@ public class SimpleFibonacci {
     }
 
     private static boolean resume() {
-        return true;
+        StringReceiver receiver = new StringReceiver();
+        String response = "";
+        while (!"Y".equalsIgnoreCase(response) && !"N".equalsIgnoreCase(response)) {
+            System.out.println(Message.REQUEST.getMsg());
+            response = receiver.receive();
+        }
+        if(response.equalsIgnoreCase("N")) {
+            StringReceiver.close();
+        }
+        return response.equalsIgnoreCase("Y");
     }
 }
 
