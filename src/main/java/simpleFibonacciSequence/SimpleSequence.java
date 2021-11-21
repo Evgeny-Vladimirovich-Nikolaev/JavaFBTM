@@ -1,8 +1,10 @@
 public class SimpleSequence {
 
+    private int index;
     private String message;
 
     SimpleSequence(int index) {
+        this.index = index;
         if(index < 94){
             setLongItem(index);
         } else {
@@ -10,38 +12,38 @@ public class SimpleSequence {
         }
     }
 
-    private void setLongItem(int index) {
+    private void setLongItem(int ind) {
         long current = 1,
                 next = 1;
-        if(index < 3) {
-            writeMessage(index, (index - 1));
+        if(ind < 3) {
+            writeMessage(ind - 1);
             return;
         }
-        while(index-- > 2) {
+        while(ind-- > 2) {
             long previous = current;
             current = next;
             next += previous;
         }
-        writeMessage(index, current);
+        writeMessage(current);
     }
 
-    private void setDoubleItem(int index) {
+    private void setDoubleItem(int ind) {
         double current = 1,
                 next = 1;
-        while(index-- > 2) {
+        while(ind-- > 2) {
             double previous = current;
             current = next;
             next += previous;
         }
-        writeMessage(index, current);
+        writeMessage(current);
     }
 
-    private void writeMessage(int index, long item) {
+    private void writeMessage(long item) {
         message = String.format(Message.FIBONACCI.getMsg(), index, item);
     }
 
-    private void writeMessage(int index, double item) {
-        message = Double.toString(item);
+    private void writeMessage(double item) {
+        message = String.format(Message.FIBONACCI.getMsg(), index, item);
     }
 
     @Override

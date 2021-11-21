@@ -21,11 +21,15 @@ public class NumberReceiver extends Receiver{
             } catch(IOException ioEx) {
                 System.out.println(Message.IO_ERROR.getMsg());
                 continue;
-            }return value;
+            } catch(Exception ex) {
+                System.out.println(Message.ERROR.getMsg());
+                continue;
+            }
+            return value;
         }
    }
 
-    static boolean checkLine(/*@NotNull*/ String line) {
+    private boolean checkLine(/*@NotNull*/ String line) {
         char[] ch = line.toCharArray();
         if(ch[0] != 45 && (ch[0] < 48 || ch[0] > 57)) {
             return false;

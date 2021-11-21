@@ -1,6 +1,6 @@
 public class SimpleFibonacci {
 
-    private static int index;
+    static int index;
 
     public static void main(String[] args) {
         do {
@@ -9,7 +9,7 @@ public class SimpleFibonacci {
         } while(resume());
     }
 
-    private static void initIndex() {
+    static void initIndex() {
         NumberReceiver numberReceiver = new NumberReceiver();
         while(index < 1) {
             index = numberReceiver.receiveInt(String.format("%s%s%s%n",
@@ -19,17 +19,16 @@ public class SimpleFibonacci {
         }
     }
 
-    private static void findItem() {
+    static void findItem() {
         System.out.println(new SimpleSequence(index));
         index = 0;
     }
 
-    private static boolean resume() {
+    static boolean resume() {
         StringReceiver receiver = new StringReceiver();
         String response = "";
         while (!"Y".equalsIgnoreCase(response) && !"N".equalsIgnoreCase(response)) {
-            System.out.println(Message.REQUEST.getMsg());
-            response = receiver.receive();
+            response = receiver.receive(Message.REQUEST.getMsg());
         }
         if(response.equalsIgnoreCase("N")) {
             StringReceiver.close();
