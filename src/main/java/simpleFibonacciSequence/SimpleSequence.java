@@ -5,7 +5,7 @@ public class SimpleSequence {
 
     SimpleSequence(int index) {
         this.index = index;
-        if(index < 94){
+        if(index < 94) {
             setLongItem(index);
         } else {
             setDoubleItem(index);
