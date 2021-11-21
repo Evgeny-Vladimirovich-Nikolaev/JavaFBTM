@@ -28,8 +28,8 @@ public class SimpleSequence {
     }
 
     private void setDoubleItem(int ind) {
-        double current = 1,
-                next = 1;
+        double current = 1L,
+                next = 1L;
         while(ind-- > 2) {
             double previous = current;
             current = next;
