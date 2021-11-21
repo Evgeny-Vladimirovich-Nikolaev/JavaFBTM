@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class NumberReceiver extends Receiver{
+public class NumberReceiver extends Receiver {
 
     public int receiveInt(String conditions) {
         int value;
@@ -40,6 +40,4 @@ public class NumberReceiver extends Receiver{
         }
         return true;
    }
-
-
 }

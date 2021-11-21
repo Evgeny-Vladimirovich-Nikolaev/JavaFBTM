@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class StringReceiver extends Receiver{
+public class StringReceiver extends Receiver {
 
     public String receive(String conditions) {
         String temp = "";
@@ -8,7 +8,7 @@ public class StringReceiver extends Receiver{
             System.out.println(conditions);
             try {
                 temp = inputReader.readLine();
-            } catch (IOException e) {
+            } catch(IOException e) {
                 System.out.println(Message.IO_ERROR.getMsg());
                 continue;
             } catch(Exception ex) {
