@@ -16,7 +16,7 @@ public class SimpleSequence {
         long current = 1,
                 next = 1;
         if(ind < 3) {
-            writeMessage(ind - 1);
+            writeMessage(Integer.toString(ind - 1));
             return;
         }
         while(ind-- > 2) {
@@ -24,7 +24,7 @@ public class SimpleSequence {
             current = next;
             next += previous;
         }
-        writeMessage(current);
+        writeMessage(Long.toString(current));
     }
 
     private void setDoubleItem(int ind) {
@@ -35,14 +35,10 @@ public class SimpleSequence {
             current = next;
             next += previous;
         }
-        writeMessage(current);
+        writeMessage(Double.toString(current));
     }
 
-    private void writeMessage(long item) {
-        message = String.format(Message.FIBONACCI.getMsg(), index, item);
-    }
-
-    private void writeMessage(double item) {
+    private void writeMessage(String item) {
         message = String.format(Message.FIBONACCI.getMsg(), index, item);
     }
 
