@@ -1,11 +1,5 @@
 import java.io.IOException;
 
-/**
- * Не удалось реализовать try-with-resources, так как нет возможности повторно открыть System.in.
- * Здесь проблему решил созданием класса NumberReceiver со статическими членами
- * и одноразовым закрытием потоков.
- */
-
 public class NumberReceiver extends Receiver{
 
     public int receiveInt(String conditions) {

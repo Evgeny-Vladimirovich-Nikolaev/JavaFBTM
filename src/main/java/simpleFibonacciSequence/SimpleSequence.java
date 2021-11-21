@@ -10,7 +10,7 @@ public class SimpleSequence {
         }
     }
 
-    public void setLongItem(int index) {
+    private void setLongItem(int index) {
         long current = 1,
                 next = 1;
         if(index < 3) {
@@ -25,7 +25,7 @@ public class SimpleSequence {
         writeMessage(index, current);
     }
 
-    public void setDoubleItem(int index) {
+    private void setDoubleItem(int index) {
         double current = 1,
                 next = 1;
         while(index-- > 2) {
@@ -37,7 +37,7 @@ public class SimpleSequence {
     }
 
     private void writeMessage(int index, long item) {
-        message = Long.toString(item);
+        message = String.format(Message.FIBONACCI.getMsg(), index, item);
     }
 
     private void writeMessage(int index, double item) {
