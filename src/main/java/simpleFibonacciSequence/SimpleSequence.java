@@ -5,7 +5,7 @@ public class SimpleSequence {
 
     SimpleSequence(int index) {
         this.index = index;
-        if(index < 94){
+        if(index < 94) {
             setLongItem(index);
         } else {
             setDoubleItem(index);
@@ -13,8 +13,8 @@ public class SimpleSequence {
     }
 
     private void setLongItem(int ind) {
-        long current = 1,
-                next = 1;
+        long current = 1L,
+                next = 1L;
         if(ind < 3) {
             writeMessage(Integer.toString(ind - 1));
             return;
