@@ -12,6 +12,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/squareRoot/stupidSquareRoot" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/simpleFibonacciSequence" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/advancedFibonacciSequense" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/randomArray" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/test" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
