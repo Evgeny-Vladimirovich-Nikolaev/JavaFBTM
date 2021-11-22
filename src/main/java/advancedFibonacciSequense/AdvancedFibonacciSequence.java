@@ -1,17 +1,17 @@
 public class AdvancedFibonacciSequence {
 
-    static int index;
+    private static int index;
 
     public static void main(String[] args) {
         do {
             initIndex();
             findItem();
-        } while(resume());
+        } while (resume());
     }
 
-    static void initIndex() {
+    private static void initIndex() {
         NumberReceiver numberReceiver = new NumberReceiver();
-        while(index < 1) {
+        while (index < 1) {
             index = numberReceiver.receiveInt(String.format("%s%s%s",
                     Message.INIT_INTEGER.getMsg(),
                     Message.CONDITION_1.getMsg(),
@@ -19,18 +19,18 @@ public class AdvancedFibonacciSequence {
         }
     }
 
-    static void findItem() {
+    private static void findItem() {
         new AdvancedSequence(index);
         index = 0;
     }
 
-    static boolean resume() {
+    private static boolean resume() {
         StringReceiver receiver = new StringReceiver();
         String response = "";
         while (!"Y".equalsIgnoreCase(response) && !"N".equalsIgnoreCase(response)) {
             response = receiver.receive(Message.REQUEST.getMsg());
         }
-        if(response.equalsIgnoreCase("N")) {
+        if (response.equalsIgnoreCase("N")) {
             StringReceiver.close();
         }
         return response.equalsIgnoreCase("Y");

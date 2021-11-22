@@ -1,22 +1,25 @@
 import java.util.Arrays;
 
 /**
- *  Класс AdvancedSequence выводит в консоль запрашиваемое пользователем число последовательности Фибоначчи.
- *
+ * Класс AdvancedSequence выводит в консоль запрашиваемое пользователем число последовательности Фибоначчи.
+ * Для чисел с 1 по 93 используется тип long и кэширование в массиве по мере их вызова.
+ * Для чисел, начиная с 94, используется тип double
+ * и обращение к кэш-массиву с заполнением последнего в случае необходимости.
  */
-
 
 public class AdvancedSequence {
 
-    static int index;
-    static long[] cache = new long[93];
+    static long[] cache = new long[93]; // кэш-массив
+    static int index;                   // порядковый номер наибольшего найденного числа;
+                                        // на 1 больше индекса в массиве
+    private String message;
 
     AdvancedSequence(int ind) {
         initStartValues();
         if (ind <= index) {
-            getItem(ind);
+            getFromCache(ind);
         } else {
-            setItem(ind);
+            getNewItem(ind);
         }
     }
 
@@ -28,34 +31,34 @@ public class AdvancedSequence {
         }
     }
 
-    private void getItem(int ind) {
+    private void getFromCache(int ind) {
         System.out.println(String.format(Message.FIBONACCI.getMsg(), ind, cache[ind - 1]));
         System.out.println(Message.CACHE.getMsg());
         System.out.println(Arrays.toString(cache));
     }
 
-    private void setItem(int ind) {
-        System.out.println("Вычисление начнется с числа № " + (index + 1));
+    private void getNewItem(int ind) {
+        System.out.println(String.format(Message.FIBONACCI_START.getMsg(), (index + 1)));
         if (ind < 94) {
-            setLongItem(ind);
+            getLongItem(ind);
+            System.out.println(String.format(Message.FIBONACCI.getMsg(), ind, cache[ind - 1]));
         } else {
-            setDoubleItem(ind);
+            getDoubleItem(ind);
         }
-        System.out.println(String.format(Message.FIBONACCI.getMsg(), ind, cache[ind - 1]));
     }
 
-    private void setLongItem(int ind) {
+    private void getLongItem(int ind) {
         ind -= index;
         while (ind-- > 0) {
             cache[index] = cache[index - 2] + cache[index++ - 1];
         }
     }
 
-    private void setDoubleItem(int ind) {
+    private void getDoubleItem(int ind) {
         int temp = ind - 93;
         double current, next;
         if (index < 93) {
-            setLongItem(93);
+            getLongItem(93);
         }
         current = cache[92];
         next = current + cache[91];
@@ -64,5 +67,6 @@ public class AdvancedSequence {
             current = next;
             next += previous;
         }
+        System.out.println(String.format(Message.FIBONACCI.getMsg(), ind, next));
     }
 }
