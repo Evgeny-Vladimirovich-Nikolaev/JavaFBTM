@@ -1,27 +1,39 @@
 public class AdvancedFibonacciSequence {
 
+    static int index;
+
     public static void main(String[] args) {
-        new AdvancedSequence(1);
-        new AdvancedSequence(2);
-        new AdvancedSequence(3);
-        new AdvancedSequence(4);
-        new AdvancedSequence(5);
-        new AdvancedSequence(15);
-        new AdvancedSequence(93);
-        new AdvancedSequence(20);
-        new AdvancedSequence(9);
-        new AdvancedSequence(8);
-        new AdvancedSequence(7);
-        new AdvancedSequence(94);
+        do {
+            initIndex();
+            findItem();
+        } while(resume());
+    }
 
+    static void initIndex() {
+        NumberReceiver numberReceiver = new NumberReceiver();
+        while(index < 1) {
+            index = numberReceiver.receiveInt(String.format("%s%s%s",
+                    Message.INIT_INTEGER.getMsg(),
+                    Message.CONDITION_1.getMsg(),
+                    Message.CONDITION_2.getMsg()));
+        }
+    }
 
-//        for(int i = 0; i <= 98; i++) {
-//            int j = i;
-//            while(j > 1) {
-//                System.out.print(j + " ---> ");
-//                new AdvancedSequence(j);
-//                j -= 5;
-//            }
-//         }
+    static void findItem() {
+        new AdvancedSequence(index);
+        index = 0;
+    }
+
+    static boolean resume() {
+        StringReceiver receiver = new StringReceiver();
+        String response = "";
+        while (!"Y".equalsIgnoreCase(response) && !"N".equalsIgnoreCase(response)) {
+            response = receiver.receive(Message.REQUEST.getMsg());
+        }
+        if(response.equalsIgnoreCase("N")) {
+            StringReceiver.close();
+        }
+        return response.equalsIgnoreCase("Y");
     }
 }
+
