@@ -7,16 +7,17 @@ public class ArrayRunner {
     ArrayRunner (int len) {
         this.arr = new double[len];
         fillArray();
-        while(chooseAction());
+        while(chooseOperation());
     }
 
     private void fillArray() {
         for(int i = 0; i < arr.length; i++) {
             arr[i] = Math.random();
         }
+        System.out.println("Создан массив размером " + arr.length + " элементов");
     }
 
-    private boolean chooseAction() {
+    private boolean chooseOperation() {
         NumberReceiver numberReceiver = new NumberReceiver();
         int choice = -1;
         while (choice < 0 || choice > 4) {
@@ -35,16 +36,40 @@ public class ArrayRunner {
         }
     }
 
-    private void showMax() {
+    private void showMin() {
+        int min = 0;
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] < arr[min]) {
+                min = i;
+            }
+        }
+        System.out.println(String.format(
+                Message.EXTREME_VAL.getMsg(),
+                "Минимальное",
+                arr[min],
+                min));
+    }
 
+    private void showMax() {
+        int max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i] > arr[max]) {
+                max = i;
+            }
+        }
+        System.out.println(String.format(
+                Message.EXTREME_VAL.getMsg(),
+                "Максимальное",
+                arr[max],
+                max));
     }
 
     private void calculateAvg() {
-
-    }
-
-    private void showMin() {
-
+        double avg = 0.0;
+        for (double v : arr) {
+            avg += v;
+        }
+        System.out.println("Среднее значение в массиве равно " + (avg / arr.length));
     }
 
     private void showArray() {

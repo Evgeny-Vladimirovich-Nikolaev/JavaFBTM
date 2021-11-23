@@ -30,10 +30,10 @@ public class AdvancedFibonacciSequence {
         while (!"Y".equalsIgnoreCase(response) && !"N".equalsIgnoreCase(response)) {
             response = receiver.receive(Message.REQUEST.getMsg());
         }
-        if (response.equalsIgnoreCase("N")) {
+        if ("Y".equalsIgnoreCase(response)) {
             StringReceiver.close();
         }
-        return response.equalsIgnoreCase("Y");
+        return "N".equalsIgnoreCase(response);
     }
 }
 

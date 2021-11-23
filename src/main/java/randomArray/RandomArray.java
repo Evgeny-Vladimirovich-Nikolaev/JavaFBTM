@@ -15,9 +15,7 @@ public class RandomArray {
                     Message.CONDITION_1.getMsg(),
                     Message.CONDITION_2.getMsg()));
         }
-        System.out.println("arrLength = " + arrLength);
         new ArrayRunner(arrLength);
-
     }
 
     private static boolean resume() {
@@ -26,6 +24,9 @@ public class RandomArray {
         while(!"Y".equalsIgnoreCase(response) && !"N".equalsIgnoreCase(response)) {
             response = stringReceiver.receive(Message.REQUEST.getMsg());
         }
-        return "E".equalsIgnoreCase(response);
+        if("Y".equalsIgnoreCase(response)) {
+            Receiver.close();
+        }
+        return "N".equalsIgnoreCase(response);
     }
 }
