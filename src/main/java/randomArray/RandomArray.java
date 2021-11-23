@@ -21,10 +21,10 @@ public class RandomArray {
     private static boolean resume() {
         String response = "";
         StringReceiver stringReceiver = new StringReceiver();
-        while(!"Y".equalsIgnoreCase(response) && !"N".equalsIgnoreCase(response)) {
+        while (!"Y".equalsIgnoreCase(response) && !"N".equalsIgnoreCase(response)) {
             response = stringReceiver.receive(Message.REQUEST.getMsg());
         }
-        if("Y".equalsIgnoreCase(response)) {
+        if ("Y".equalsIgnoreCase(response)) {
             Receiver.close();
         }
         return "N".equalsIgnoreCase(response);

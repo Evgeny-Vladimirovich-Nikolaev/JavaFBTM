@@ -4,17 +4,28 @@ public class ArrayRunner {
 
     private double[] arr;
 
-    ArrayRunner (int len) {
-        this.arr = new double[len];
-        fillArray();
-        while(chooseOperation());
+    ArrayRunner(int len) {
+        if (initArray(len)) {
+            fillArray();
+            while (chooseOperation()) ;
+        }
+    }
+
+    private boolean initArray(int len) {
+        try {
+            this.arr = new double[len];
+        } catch (OutOfMemoryError mEx) {
+            System.out.println(Message.ARRAY_OUT_MEMORY.getMsg());
+            return false;
+        }
+        return true;
     }
 
     private void fillArray() {
-        for(int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = Math.random();
         }
-        System.out.println("Создан массив размером " + arr.length + " элементов");
+        System.out.println(Message.ARRAY_LENGTH.getMsg() + arr.length);
     }
 
     private boolean chooseOperation() {
@@ -38,8 +49,8 @@ public class ArrayRunner {
 
     private void showMin() {
         int min = 0;
-        for(int i = 0; i < arr.length; i++) {
-            if(arr[i] < arr[min]) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < arr[min]) {
                 min = i;
             }
         }
@@ -53,7 +64,7 @@ public class ArrayRunner {
     private void showMax() {
         int max = 0;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] > arr[max]) {
+            if (arr[i] > arr[max]) {
                 max = i;
             }
         }
@@ -69,11 +80,15 @@ public class ArrayRunner {
         for (double v : arr) {
             avg += v;
         }
-        System.out.println("Среднее значение в массиве равно " + (avg / arr.length));
+        System.out.println(Message.AVG.getMsg() + (avg / arr.length));
     }
 
     private void showArray() {
-        System.out.println(Arrays.toString(arr));
+        try {
+            System.out.println(Arrays.toString(arr));
+        } catch (OutOfMemoryError mEx) {
+            System.out.println(Message.OPERATION_OUT_MEMORY.getMsg());
+        }
     }
 
 }
