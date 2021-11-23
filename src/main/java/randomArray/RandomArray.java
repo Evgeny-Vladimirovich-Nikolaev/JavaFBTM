@@ -8,7 +8,6 @@ public class RandomArray {
 
     private static void initArray() {
         int arrLength = 0;
-        System.out.println("arrLength = " + arrLength);
         while (arrLength < 1) {
             NumberReceiver numberReceiver = new NumberReceiver();
             arrLength = numberReceiver.receiveInt(String.format("%s%s%s",
