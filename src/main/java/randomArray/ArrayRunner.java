@@ -7,9 +7,7 @@ public class ArrayRunner {
     ArrayRunner (int len) {
         this.arr = new double[len];
         fillArray();
-        do {
-            chooseAction();
-        } while (resume());
+        while(chooseAction());
     }
 
     private void fillArray() {
@@ -19,19 +17,31 @@ public class ArrayRunner {
         }
     }
 
-    private void chooseAction() {
+    private boolean chooseAction() {
         NumberReceiver numberReceiver = new NumberReceiver();
         int choice = -1;
         while (choice < 0 || choice > 4) {
             choice = numberReceiver.receiveInt(Message.CHOOSE_ARRAY_ACTION.getMsg());
         }
+        initOperation(choice);
+        return choice != 0;
     }
 
     private void initOperation(int choice) {
         switch (choice) {
-            case 1 : showMin();
-            break;
+            case 1 -> showMin();
+            case 2 -> showMax();
+            case 3 -> calculateAvg();
+            case 4 -> showArray();
         }
+    }
+
+    private void showMax() {
+
+    }
+
+    private void calculateAvg() {
+
     }
 
     private void showMin() {
@@ -42,7 +52,4 @@ public class ArrayRunner {
         System.out.println(Arrays.toString(arr));
     }
 
-    private boolean resume() {
-        return true;
-    }
 }
