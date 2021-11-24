@@ -11,7 +11,7 @@ public class AdvancedSequence {
 
     static long[] cache = new long[93]; // кэш-массив
     static int index;                   // порядковый номер наибольшего найденного числа;
-                                        // на 1 больше индекса в массиве
+    // на 1 больше индекса в массиве
 
     AdvancedSequence(int ind) {
         initStartValues();

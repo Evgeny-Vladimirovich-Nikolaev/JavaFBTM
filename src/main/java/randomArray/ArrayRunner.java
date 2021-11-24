@@ -1,5 +1,10 @@
 import java.util.Arrays;
 
+/**
+ * Найти максимум, минимум и среднее арифметическое можно за один проход по массиву,
+ * но по условию задания нужно реализовать ТРИ метода.
+ */
+
 public class ArrayRunner {
 
     private double[] arr;
@@ -90,5 +95,4 @@ public class ArrayRunner {
             System.out.println(Message.OPERATION_OUT_MEMORY.getMsg());
         }
     }
-
 }
