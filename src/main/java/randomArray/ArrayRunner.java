@@ -82,8 +82,8 @@ public class ArrayRunner {
 
     private void calculateAvg() {
         double avg = 0.0;
-        for (double v : arr) {
-            avg += v;
+        for (double val : arr) {
+            avg += val;
         }
         System.out.println(Message.AVG.getMsg() + (avg / arr.length));
     }
