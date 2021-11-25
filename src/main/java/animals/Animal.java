@@ -1,4 +1,6 @@
 public class Animal {
+
+    protected String species;
     protected String name;
     protected int runningDistance;
     protected int runningLimit;

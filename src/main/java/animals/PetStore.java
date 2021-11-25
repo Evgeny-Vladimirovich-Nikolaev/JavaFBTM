@@ -1,19 +1,28 @@
 public class PetStore {
     private Animal animal;
-    private final String CHOOSE_PET = "Выберите питомца:\n" +
-            "1 - Щенок\n2 - Котёнок\n3 - Крыса\n4 - Хомячок\n5 - Тигренок";
+    private final String CHOOSE_PET = """
+            Выберите питомца:
+            1 - Щенок
+            2 - Котёнок
+            3 - Крыса
+            4 - Хомячок
+            5 - Тигренок
+            0 - Выйти из магазина""";
 
     Animal byAnimal() {
+        String name = new String();
         int pet = choosePet();
-        String name = getName();
-        switch (pet) {
-            case 1 : return new Dog(name);
-            case 2 : return new Cat(name);
-            case 3 : return new Rat(name);
-            case 4 : return new Hamster(name);
-            case 5 : return new Tiger(name);
+        if (pet != 0) {
+            name = getName();
         }
-        return null;
+        return switch (pet) {
+            case 1 -> new Dog(name);
+            case 2 -> new Cat(name);
+            case 3 -> new Rat(name);
+            case 4 -> new Hamster(name);
+            case 5 -> new Tiger(name);
+            default -> null;
+        };
     }
 
     private int choosePet() {
@@ -28,13 +37,13 @@ public class PetStore {
     private String getName() {
         StringReceiver receiver = new StringReceiver();
         StringBuilder sb;
-        do{
+        do {
             sb = new StringBuilder(
                     receiver.receive("Придумайте имя своему питомцу (не более 20 символов)."));
-            if(sb.length() > 20) {
+            if (sb.length() > 20) {
                 sb.delete(20, sb.length() - 1);
             }
-        } while(sb.length() == 0);
+        } while (sb.length() == 0);
         return sb.toString();
     }
 }

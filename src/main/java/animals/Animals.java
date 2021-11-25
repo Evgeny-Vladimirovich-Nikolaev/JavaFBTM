@@ -3,16 +3,9 @@ public class Animals {
     public static void main(String[] args) {
 
         Animal animal = new PetStore().byAnimal();
-        System.out.println(animal.getClass() + " " + animal.name);
-//        Animal bobik = new Dog("Бобик");
-//        Animal murzik = new Cat("Мурзик");
-//        bobik.run(300);
-//        bobik.swim(5);
-//        murzik.run(150);
-//        bobik.run(300);
-//        murzik.swim(1);
-//        bobik.swim(2);
-//        murzik.run(70);
-//        murzik.run(20);
+        if(animal != null) {
+            System.out.println(animal.species + " " + animal.name);
+        }
+
     }
 }
