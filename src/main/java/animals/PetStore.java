@@ -3,11 +3,6 @@ public class PetStore {
     private final String CHOOSE_PET = "Выберите питомца:\n" +
             "1 - Щенок\n2 - Котёнок\n3 - Крыса\n4 - Хомячок\n5 - Тигренок";
 
-    PetStore() {
-        choosePet();
-
-    }
-
     Animal byAnimal() {
         int pet = choosePet();
         String name = getName();

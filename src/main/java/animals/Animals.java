@@ -2,8 +2,8 @@ public class Animals {
 
     public static void main(String[] args) {
 
-        PetStore petStore = new PetStore();
-        petStore.byAnimal();
+        Animal animal = new PetStore().byAnimal();
+        System.out.println(animal.getClass() + " " + animal.name);
 //        Animal bobik = new Dog("Бобик");
 //        Animal murzik = new Cat("Мурзик");
 //        bobik.run(300);
