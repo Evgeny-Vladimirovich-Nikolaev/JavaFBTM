@@ -6,7 +6,8 @@ public class Pets {
 
     Pets() {
         fillAnimalList();
-        chooseScenario();
+        showList();
+        start();
     }
 
     private void fillAnimalList() {
@@ -15,10 +16,9 @@ public class Pets {
             pets.add(new Cat("Мурзик"));
             pets.add(new Tiger("Ричард"));
         }
-        show();
     }
 
-    private void show() {
+    private void showList() {
         StringBuilder sb = new StringBuilder(AnimalsMsg.SHOW.getMsg());
         for (Animal animal : pets) {
             sb.append(animal.species);
@@ -26,9 +26,14 @@ public class Pets {
             sb.append(animal.name);
             sb.append('\n');
         }
+        System.out.println(sb);
     }
 
-    private void chooseScenario() {
+    private void start() {
+        while(chooseScenario());
+    }
+
+    private boolean chooseScenario() {
         int scenario= -1;
         if(pets.size() < 9) {
             while (scenario < 0 || scenario > 2) {
@@ -42,6 +47,7 @@ public class Pets {
             }
         }
         implementScenario(scenario);
+        return scenario != 0;
     }
 
     private void implementScenario(int scenario) {
@@ -58,6 +64,6 @@ public class Pets {
         if(animal != null) {
             pets.add(animal);
         }
-        show();
+        showList();
     }
 }
