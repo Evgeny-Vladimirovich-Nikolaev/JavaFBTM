@@ -1,7 +1,7 @@
 public class Hamster extends Animal{
 
     Hamster(String name) {
-        this.species = "хомячок";
+        this.species = "Хомячок";
         this.name = name;
         this.runningLimit = 30;
     }
