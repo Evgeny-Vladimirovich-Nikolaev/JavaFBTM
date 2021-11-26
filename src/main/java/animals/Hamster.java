@@ -1,13 +1,11 @@
 public class Hamster extends Animal {
 
     Hamster(String name) {
-        this.species = "Хомячок";
-        this.name = name;
-        this.runningLimit = 30;
+        super("Хомяк", name, 30, 0);
     }
 
     @Override
     protected void swim(int distance) {
-        System.out.println(name + " не любит плавать.");
+        System.out.println(this.getName() + " не любит плавать.");
     }
 }

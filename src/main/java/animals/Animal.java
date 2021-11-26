@@ -1,12 +1,27 @@
 public class Animal {
 
-    protected String species;
-    protected String name;
-    protected int runningDistance;
-    protected int runningLimit;
-    protected int swimmingDistance;
-    protected int swimmingLimit;
-    protected boolean isTired;
+    private  String species;
+    private String name;
+    private int runningDistance;
+    private int runningLimit;
+    private int swimmingDistance;
+    private int swimmingLimit;
+    private boolean isTired;
+
+    Animal(String species, String name, int runningLimit, int swimmingLimit) {
+        this.species = species;
+        this.name = name;
+        this.runningLimit = runningLimit;
+        this.swimmingLimit = swimmingLimit;
+    }
+
+    protected String getSpecies () {
+        return species;
+    }
+
+    protected String getName() {
+        return name;
+    }
 
     protected void run(int metres) {
         runningDistance = move(runningLimit, runningDistance, metres, " пробежал ");

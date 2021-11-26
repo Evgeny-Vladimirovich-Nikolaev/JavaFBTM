@@ -4,7 +4,7 @@ public class PetStore {
         String name = new String();
         int pet = choosePet();
         if (pet != 0) {
-            name = getName();
+            name = createName();
         }
         return switch (pet) {
             case 1 -> new Dog(name);
@@ -25,7 +25,7 @@ public class PetStore {
         return choice;
     }
 
-    private String getName() {
+    private String createName() {
         StringReceiver receiver = new StringReceiver();
         StringBuilder sb;
         do {

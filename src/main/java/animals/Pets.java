@@ -19,9 +19,9 @@ public class Pets {
     private void showList() {
         StringBuilder sb = new StringBuilder(AnimalsMsg.SHOW.getMsg());
         for (Animal animal : pets) {
-            sb.append(animal.species);
+            sb.append(animal.getSpecies());
             sb.append(" ");
-            sb.append(animal.name);
+            sb.append(animal.getName());
             sb.append('\n');
         }
         System.out.println(sb);

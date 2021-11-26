@@ -30,9 +30,9 @@ public class Training {
         for (Animal animal : pets) {
             sb.append(pets.indexOf(animal) + 1);
             sb.append(" - ");
-            sb.append(animal.species);
+            sb.append(animal.getSpecies());
             sb.append(" ");
-            sb.append(animal.name);
+            sb.append(animal.getName());
             sb.append('\n');
         }
         sb.append(AnimalsMsg.END.getMsg());
