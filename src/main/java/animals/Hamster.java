@@ -1,4 +1,4 @@
-public class Hamster extends Animal{
+public class Hamster extends Animal {
 
     Hamster(String name) {
         this.species = "Хомячок";

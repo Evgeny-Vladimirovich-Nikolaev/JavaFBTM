@@ -1,13 +1,4 @@
 public class PetStore {
-    private Animal animal;
-    private final String CHOOSE_PET = """
-            Выберите питомца:
-            1 - Щенок
-            2 - Котёнок
-            3 - Крыса
-            4 - Хомячок
-            5 - Тигренок
-            0 - Выйти из магазина""";
 
     Animal byAnimal() {
         String name = new String();
@@ -29,7 +20,7 @@ public class PetStore {
         NumberReceiver receiver = new NumberReceiver();
         int choice = -1;
         while (choice < 0 || choice > 5) {
-            choice = receiver.receiveInt(CHOOSE_PET);
+            choice = receiver.receiveInt(AnimalsMsg.CHOOSE_PET.getMsg());
         }
         return choice;
     }
@@ -39,7 +30,7 @@ public class PetStore {
         StringBuilder sb;
         do {
             sb = new StringBuilder(
-                    receiver.receive("Придумайте имя своему питомцу (не более 20 символов)."));
+                    receiver.receive(AnimalsMsg.SET_NAME.getMsg()));
             if (sb.length() > 20) {
                 sb.delete(20, sb.length() - 1);
             }

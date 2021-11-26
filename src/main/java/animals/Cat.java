@@ -1,4 +1,4 @@
-public class Cat<swim> extends Animal{
+public class Cat extends Animal {
 
     Cat(String name) {
         this.species = "Кот";

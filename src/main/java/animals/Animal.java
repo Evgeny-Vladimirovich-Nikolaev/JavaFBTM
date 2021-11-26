@@ -22,9 +22,15 @@ public class Animal {
         } else {
             if (distance + metres <= limit) {
                 distance += metres;
-                System.out.println(name + move + metres + " метров.");
+                System.out.println(name + move + metres + " м (всего " + distance + "m).");
             } else {
-                System.out.println(name + move + "только " + (limit - distance) + " метров. Больше не может.");
+                System.out.println(name
+                        + move
+                        + "только "
+                        + (limit - distance)
+                        + " м (всего "
+                        + limit
+                        + " м). Больше не может.");
                 distance = limit;
             }
             isTired = distance == limit;
@@ -33,10 +39,10 @@ public class Animal {
     }
 
     protected void cantMove() {
-        if(runningDistance != 0) {
+        if (runningDistance != 0) {
             System.out.println(name + " уже пробежал " + runningDistance + " метров.");
         }
-        if(swimmingDistance != 0) {
+        if (swimmingDistance != 0) {
             System.out.println(name + " уже проплыл " + swimmingDistance + " метров.");
         }
         System.out.println(name + " устал и не может ни бежать, ни плыть.");

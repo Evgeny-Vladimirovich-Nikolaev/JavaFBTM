@@ -11,11 +11,9 @@ public class Pets {
     }
 
     private void fillAnimalList() {
-        if(pets.isEmpty()) {
-            pets.add(new Dog("Бобик"));
-            pets.add(new Cat("Мурзик"));
-            pets.add(new Tiger("Ричард"));
-        }
+        pets.add(new Dog("Бобик"));
+        pets.add(new Cat("Мурзик"));
+        pets.add(new Tiger("Ричард"));
     }
 
     private void showList() {
@@ -30,12 +28,12 @@ public class Pets {
     }
 
     private void start() {
-        while(chooseScenario());
+        while (chooseScenario()) ;
     }
 
     private boolean chooseScenario() {
-        int scenario= -1;
-        if(pets.size() < 9) {
+        int scenario = -1;
+        if (pets.size() < 9) {
             while (scenario < 0 || scenario > 2) {
                 NumberReceiver receiver = new NumberReceiver();
                 scenario = receiver.receiveInt(AnimalsMsg.SCENARIO_1.getMsg());
@@ -52,16 +50,14 @@ public class Pets {
 
     private void implementScenario(int scenario) {
         switch (scenario) {
-            case 1 : new Training(pets);
-            break;
-            case 2 : addPet();
-            break;
+            case 1 -> new Training(pets);
+            case 2 -> addPet();
         }
     }
 
     private void addPet() {
         Animal animal = new PetStore().byAnimal();
-        if(animal != null) {
+        if (animal != null) {
             pets.add(animal);
         }
         showList();
