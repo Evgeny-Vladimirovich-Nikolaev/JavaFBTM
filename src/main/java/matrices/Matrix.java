@@ -1,10 +1,14 @@
+import java.util.Arrays;
+
 public class Matrix {
 
     private int rows, columns;
     int[][] matrixArray;
 
     Matrix () {
-        matrixArray = new int[2][2];
+        this.rows = 2;
+        this.columns = 2;
+        this.matrixArray = new int[2][2];
     }
 
     Matrix (int rows, int columns) {
@@ -30,6 +34,7 @@ public class Matrix {
                 sum[i][j] = matrixArray[i][j] + another[i][j];
             }
         }
+        //System.out.println(Arrays.deepToString(sum));
         return new Matrix(sum);
     }
 }
