@@ -37,7 +37,7 @@ public class Animal {
         } else {
             if (distance + metres <= limit) {
                 distance += metres;
-                System.out.println(name + move + metres + " м (всего " + distance + "m).");
+                System.out.println(name + move + metres + " м (всего " + distance + " м).");
             } else {
                 System.out.println(name
                         + move
