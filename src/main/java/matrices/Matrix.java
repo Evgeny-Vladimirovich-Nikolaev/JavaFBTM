@@ -30,7 +30,6 @@ public class Matrix {
                 sum[i][j] = matrixArray[i][j] + another[i][j];
             }
         }
-        //return Matrix(sum);
-        return null;
+        return new Matrix(sum);
     }
 }
