@@ -2,21 +2,20 @@ import java.util.ArrayList;
 
 public class Training {
 
-    private ArrayList<Animal> pets;
+    private ArrayList<Animal> petsList;
     private NumberReceiver numberReceiver = new NumberReceiver();
 
-    Training(ArrayList pets) {
-        this.pets = pets;
-        train();
+    Training(ArrayList<Animal> petsList) {
+        this.petsList = petsList;
     }
 
-    private void train() {
+    protected void train() {
         while (chooseParticipant()) ;
     }
 
     private boolean chooseParticipant() {
         int choice = -1;
-        while (choice < 0 || choice > pets.size()) {
+        while (choice < 0 || choice > petsList.size()) {
             choice = numberReceiver.receiveInt(buildList());
         }
         if (choice != 0) {
@@ -27,8 +26,8 @@ public class Training {
 
     private String buildList() {
         StringBuilder sb = new StringBuilder(AnimalsMsg.START.getMsg());
-        for (Animal animal : pets) {
-            sb.append(pets.indexOf(animal) + 1);
+        for (Animal animal : petsList) {
+            sb.append(petsList.indexOf(animal) + 1);
             sb.append(" - ");
             sb.append(animal.getSpecies());
             sb.append(" ");
@@ -61,7 +60,7 @@ public class Training {
     }
 
     private void start(int listItem, int task, int distance) {
-        Animal animal = pets.get(listItem - 1);
+        Animal animal = petsList.get(listItem - 1);
         if (task == 1) {
             animal.run(distance);
         } else {

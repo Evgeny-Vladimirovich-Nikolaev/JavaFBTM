@@ -4,7 +4,7 @@ public class Pets {
 
     private ArrayList<Animal> pets = new ArrayList<>();
 
-    Pets() {
+    protected void runPets() {
         fillAnimalList();
         showList();
         start();
@@ -50,7 +50,7 @@ public class Pets {
 
     private void implementScenario(int scenario) {
         switch (scenario) {
-            case 1 -> new Training(pets);
+            case 1 -> new Training(pets).train();
             case 2 -> addPet();
         }
     }
