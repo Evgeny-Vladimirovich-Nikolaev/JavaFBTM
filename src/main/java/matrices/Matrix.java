@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Matrix {
 
-    private int rows, columns;
+    int rows, columns;
     int[][] matrixArray;
 
     Matrix () {
@@ -21,12 +21,14 @@ public class Matrix {
         this.rows = matrixArray.length;
         this.columns = matrixArray[0].length;
         this.matrixArray = matrixArray;
+        System.out.println(this.getClass());
+        System.out.println(this.toString());
     }
 
     Matrix add (int[][] another) {
         int[][] sum = new int[rows][columns];
-        if(this.matrixArray.length != another.length
-        || this.matrixArray[0].length != another[0].length) {
+        if(!checkArray(another)) {
+            System.out.println("null");
             return null;
         }
         for(int i = 0; i < sum.length; i++) {
@@ -34,7 +36,12 @@ public class Matrix {
                 sum[i][j] = matrixArray[i][j] + another[i][j];
             }
         }
-        //System.out.println(Arrays.deepToString(sum));
+        System.out.println(Arrays.deepToString(sum));
         return new Matrix(sum);
+    }
+
+    private boolean checkArray(int[][] another) {
+        return this.matrixArray.length == another.length
+                && this.matrixArray[0].length == another[0].length;
     }
 }
