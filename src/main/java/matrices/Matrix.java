@@ -6,7 +6,6 @@ public class Matrix {
     int[][] matrixArray;
 
     Matrix() {
-
         this.m = 2;
         this.n = 2;
         this.matrixArray = new int[2][2];
@@ -22,8 +21,6 @@ public class Matrix {
         this.m = matrixArray.length;
         this.n = matrixArray[0].length;
         this.matrixArray = matrixArray;
-        System.out.println(this.getClass());
-        System.out.println(this.toString());
     }
 
     void fillArrayMatrix(int[] values) {
@@ -50,8 +47,9 @@ public class Matrix {
                 sum[i][j] = this.matrixArray[i][j] + term.matrixArray[i][j];
             }
         }
-        System.out.println(Arrays.deepToString(sum));
-        return new Matrix(sum);
+        Matrix resultMatrix = new Matrix(sum);
+        new MatrixPresentation(resultMatrix).matrixToString();
+        return resultMatrix;
     }
 
     Matrix subtract(Matrix term) {
@@ -65,8 +63,9 @@ public class Matrix {
                 difference[i][j] = this.matrixArray[i][j] - term.matrixArray[i][j];
             }
         }
-        System.out.println(Arrays.deepToString(difference));
-        return new Matrix(difference);
+        Matrix resultMatrix = new Matrix(difference);
+        new MatrixPresentation(resultMatrix).matrixToString();
+        return resultMatrix;
     }
 
     private boolean checkAnotherMatrix(Matrix term) {
@@ -74,7 +73,32 @@ public class Matrix {
                 && this.matrixArray[0].length == term.matrixArray[0].length;
     }
 
+    Matrix multiplyByMatrix(Matrix multiplicand) {
+        int[][] product = new int[this.matrixArray.length][multiplicand.matrixArray[0].length];
+        if (!checkMultiplicandMatrix(multiplicand)) {
+            System.out.println("null");
+            return null;
+        }
+        for (int m = 0; m < product.length;m++) {
+            for (int n = 0; n < product[0].length; n++) {
+                product[m][n] =  multiplyVectors(multiplicand.matrixArray, m, n);
+           }
+        }
+        Matrix resultMatrix = new Matrix(product);
+        new MatrixPresentation(resultMatrix).matrixToString();
+        return resultMatrix;
+    }
+
     private boolean checkMultiplicandMatrix(Matrix multiplicand) {
-        return this.matrixArray[n] == multiplicand.matrixArray[m];
+        return this.matrixArray[0].length == multiplicand.matrixArray.length;
+    }
+
+    private int multiplyVectors(int[][] another, int m, int n) {
+        int temp = 0;
+        int row = 0;
+        for(int val : this.matrixArray[m]) {
+            temp += val * another[row++][n];
+        }
+        return temp;
     }
 }

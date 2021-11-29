@@ -34,6 +34,12 @@ public class MatrixRunner {
                 };
         System.out.println(sm_8.findDeterminant(sm_8.matrixArray));
 
+        new MatrixPresentation(sm_3).matrixToString();
+
+        new MatrixPresentation(sm_4).matrixToString();
+
+        new MatrixPresentation(sm_5).matrixToString();
+
         SquareMatrix sm_10 = new SquareMatrix(10);
         int val = -50;
         for(int m = 0; m < 10; m++) {

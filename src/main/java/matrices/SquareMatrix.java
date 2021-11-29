@@ -14,11 +14,11 @@ public class SquareMatrix extends Matrix {
             return arr[0][0];
         } else {
             for (int j = 0; j < arr.length; j++) {
-                int multiplyer = 1;
+                int multiplier = 1;
                 if (j % 2 == 1) {
-                    multiplyer = -1;
+                    multiplier = -1;
                 }
-                dtr += arr[j][0] * findDeterminant(new MinorGetter(arr, j).getMinor()) * multiplyer;
+                dtr += arr[j][0] * findDeterminant(new MinorGetter(arr, j).getMinor()) * multiplier;
             }
         }
         return dtr;
