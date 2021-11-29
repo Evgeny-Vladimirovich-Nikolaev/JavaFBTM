@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class OldValueReceiver {
 
-    public static final String FIRST_MESSAGE = "Enter two integers between -2147483648 and 2147483647";
+    public static final String FIRST_MESSAGE = "Enter minor integers between -2147483648 and 2147483647";
     public static final String FIRST_VALUE = "The first number is ";
     public static final String SECOND_MESSAGE = "Enter the second number";
     public static final String SECOND_VALUE = "The second number is ";
