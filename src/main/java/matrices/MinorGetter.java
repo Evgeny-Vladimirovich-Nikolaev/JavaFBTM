@@ -1,15 +1,13 @@
 public class MinorGetter {
 
-    int[][] sourceArray;
-    int[][] minor;
-    int lines;
-    int columnElem;
+    private int[][] sourceArray;
+    private int[][] minor;
+    private int columnElem;
 
     MinorGetter(int[][] sourceArray, int columnElem) {
         this.sourceArray = sourceArray;
         this.columnElem = columnElem;
-        this.lines = sourceArray.length;
-        minor = new int[lines - 1][lines-1];
+        minor = new int[sourceArray.length - 1][sourceArray.length-1];
     }
 
     int[][] getMinor() {

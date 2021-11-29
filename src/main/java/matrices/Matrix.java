@@ -47,7 +47,7 @@ public class Matrix {
         }
         for (int i = 0; i < sum.length; i++) {
             for (int j = 0; j < sum[0].length; j++) {
-                sum[i][j] = matrixArray[i][j] + term.matrixArray[i][j];
+                sum[i][j] = this.matrixArray[i][j] + term.matrixArray[i][j];
             }
         }
         System.out.println(Arrays.deepToString(sum));
@@ -62,7 +62,7 @@ public class Matrix {
         }
         for (int i = 0; i < difference.length; i++) {
             for (int j = 0; j < difference[0].length; j++) {
-                difference[i][j] = matrixArray[i][j] + term.matrixArray[i][j];
+                difference[i][j] = this.matrixArray[i][j] - term.matrixArray[i][j];
             }
         }
         System.out.println(Arrays.deepToString(difference));
