@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Matrix {
 
     int m, n;                   //rows, columns;
-    int[][] matrixArray;
+    private int[][] matrixArray;
 
     Matrix() {
         this.m = 2;
@@ -21,6 +21,10 @@ public class Matrix {
         this.m = matrixArray.length;
         this.n = matrixArray[0].length;
         this.matrixArray = matrixArray;
+    }
+
+    int[][] getMatrixArray() {
+        return this.matrixArray;
     }
 
     void fillArrayMatrix(int[] values) {

@@ -5,12 +5,16 @@ public class MatrixPresentation {
     private int numberLength = 0;
 
     MatrixPresentation(Matrix matrix) {
-        this.matrixArray = matrix.matrixArray;
+        this.matrixArray = matrix.getMatrixArray();
         this.m = matrix.m;
         this.n = matrix.n;
     }
 
     void matrixToString() {
+        if(m < 0 || n < 0) {
+            System.out.println("Нельзя отобразить матрицу с размерностью 0");
+            return;
+        }
         countSymbols();
         printLines();
     }
