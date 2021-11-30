@@ -9,7 +9,7 @@ public class SquareMatrix extends Matrix {
     }
 
     protected int findDeterminant(int[][] arr) {
-        int dtr = 0;
+        int determinant = 0;
         if (arr.length == 1) {
             return arr[0][0];
         } else {
@@ -18,10 +18,10 @@ public class SquareMatrix extends Matrix {
                 if (j % 2 == 1) {
                     multiplier = -1;
                 }
-                dtr += arr[j][0] * findDeterminant(new MinorGetter(arr, j).getMinor()) * multiplier;
+                determinant += arr[j][0] * findDeterminant(new MinorGetter(arr, j).getMinor()) * multiplier;
             }
         }
-        return dtr;
+        return determinant;
     }
 }
 
