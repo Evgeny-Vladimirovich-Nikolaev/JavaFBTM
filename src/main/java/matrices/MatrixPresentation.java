@@ -37,6 +37,7 @@ public class MatrixPresentation {
     }
 
     private void printLines() {
+        System.out.printf("Матрица размером %sx%s:\n", m, n);
         printBorder();
         for(int i = 0; i < m; i++) {
             System.out.print("|");

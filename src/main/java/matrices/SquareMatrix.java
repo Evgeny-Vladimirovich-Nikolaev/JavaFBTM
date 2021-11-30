@@ -8,7 +8,7 @@ public class SquareMatrix extends Matrix {
         super(lines, lines);
     }
 
-    protected int findDeterminant(int[][] arr) {
+    protected long findDeterminant(int[][] arr) {
         int determinant = 0;
         if (arr.length == 1) {
             return arr[0][0];

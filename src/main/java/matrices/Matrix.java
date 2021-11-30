@@ -52,7 +52,6 @@ public class Matrix {
             }
         }
         Matrix resultMatrix = new Matrix(sum);
-        new MatrixPresentation(resultMatrix).matrixToString();
         return resultMatrix;
     }
 
@@ -68,7 +67,6 @@ public class Matrix {
             }
         }
         Matrix resultMatrix = new Matrix(difference);
-        new MatrixPresentation(resultMatrix).matrixToString();
         return resultMatrix;
     }
 
@@ -89,7 +87,6 @@ public class Matrix {
            }
         }
         Matrix resultMatrix = new Matrix(product);
-        new MatrixPresentation(resultMatrix).matrixToString();
         return resultMatrix;
     }
 

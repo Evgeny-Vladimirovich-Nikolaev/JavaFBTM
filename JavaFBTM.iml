@@ -17,6 +17,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/animals" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/matrices" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/animalsVoice" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

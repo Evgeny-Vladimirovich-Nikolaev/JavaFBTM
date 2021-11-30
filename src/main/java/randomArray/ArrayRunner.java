@@ -12,7 +12,7 @@ public class ArrayRunner {
     ArrayRunner(int len) {
         if (initArray(len)) {
             fillArray();
-            while (chooseOperation()) ;
+            while (chooseOperation());
         }
     }
 
