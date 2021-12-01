@@ -16,8 +16,8 @@ public class Multiplier extends UnaryOperation {
     }
 
     private void initNumber(boolean isRandom) {
-        if(isRandom) {
-            number = (int)(Math.random() * 200) -100;
+        if (isRandom) {
+            number = (int) (Math.random() * 200) - 100;
         } else {
             NumberReceiver numberReceiver = new NumberReceiver();
             number = numberReceiver.receiveInt(MatrixMsg.ENTER_NUMBER.getMsg());

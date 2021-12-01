@@ -11,8 +11,6 @@ public class SquareMatrix extends Matrix {
         rank = new int[lines];
     }
 
-
-
     // Детерминант вычисляется рекурсивным разложением по столбцу (не по строке),
     // что дает возможность копировать строки (а не столбцы) в классе MinorGetter
     protected long findDeterminant(int[][] arr) {

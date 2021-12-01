@@ -1,4 +1,4 @@
-public class MatricesProduct extends BinaryOperation{
+public class MatricesProduct extends BinaryOperation {
 
     private int k;
 

@@ -1,4 +1,4 @@
-public class Determinant{
+public class Determinant {
 
     SquareMatrix a;
     private int m;
@@ -17,11 +17,11 @@ public class Determinant{
     }
 
     private void initRandomOperand() {
-        m = (int)(Math.random() * 10) + 1;
+        m = (int) (Math.random() * 10) + 1;
         a = new SquareMatrix(m);
-        for(int i = 0; i < m; i++) {
-            for(int j = 0; j < m; j++) {
-                a.getMatrixArray()[i][j] = (int)(Math.random() * 200) - 100;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < m; j++) {
+                a.getMatrixArray()[i][j] = (int) (Math.random() * 200) - 100;
             }
         }
         determinant = a.findDeterminant(a.getMatrixArray());
@@ -37,9 +37,9 @@ public class Determinant{
 
     private void initSize() {
         NumberReceiver numberReceiver = new NumberReceiver();
-        while(m < 1) {
+        while (m < 1) {
             m = numberReceiver.receiveInt(MatrixMsg.SPECIFY_ROWS_NUMBER.getMsg()
-            + MatrixMsg.LINE_CONDITIONS.getMsg());
+                    + MatrixMsg.LINE_CONDITIONS.getMsg());
         }
         a = new SquareMatrix(m);
     }
@@ -64,6 +64,6 @@ public class Determinant{
     private void writeReport() {
         System.out.println("Квадратная матрица A\n");
         new MatrixPresentation(a).matrixToString();
-        System.out.println("Детерминант матрица A равен " + determinant);
+        System.out.println("Детерминант матрицы A равен " + determinant);
     }
 }

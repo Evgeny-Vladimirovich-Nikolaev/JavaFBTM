@@ -51,8 +51,7 @@ public class Matrix {
                 sum[i][j] = this.matrixArray[i][j] + term.matrixArray[i][j];
             }
         }
-        Matrix resultMatrix = new Matrix(sum);
-        return resultMatrix;
+        return new Matrix(sum);
     }
 
     Matrix subtract(Matrix term) {
@@ -66,8 +65,7 @@ public class Matrix {
                 difference[i][j] = this.matrixArray[i][j] - term.matrixArray[i][j];
             }
         }
-        Matrix resultMatrix = new Matrix(difference);
-        return resultMatrix;
+        return new Matrix(difference);
     }
 
     private boolean checkAnotherMatrix(Matrix term) {
@@ -81,13 +79,12 @@ public class Matrix {
             System.out.println("null");
             return null;
         }
-        for (int m = 0; m < product.length;m++) {
+        for (int m = 0; m < product.length; m++) {
             for (int n = 0; n < product[0].length; n++) {
-                product[m][n] =  multiplyVectors(multiplicand.matrixArray, m, n);
-           }
+                product[m][n] = multiplyVectors(multiplicand.matrixArray, m, n);
+            }
         }
-        Matrix resultMatrix = new Matrix(product);
-        return resultMatrix;
+        return new Matrix(product);
     }
 
     private boolean checkMultiplicandMatrix(Matrix multiplicand) {
@@ -97,15 +94,15 @@ public class Matrix {
     private int multiplyVectors(int[][] another, int m, int n) {
         int temp = 0;
         int row = 0;
-        for(int val : this.matrixArray[m]) {
+        for (int val : this.matrixArray[m]) {
             temp += val * another[row++][n];
         }
         return temp;
     }
 
-    void multiplyByNumber (int number) {
-        for(int i = 0; i < m; i++) {
-            for(int j = 0; j < n; j++) {
+    void multiplyByNumber(int number) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 this.matrixArray[i][j] *= number;
             }
         }
