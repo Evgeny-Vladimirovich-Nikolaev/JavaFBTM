@@ -1,14 +1,11 @@
 public class SquareMatrix extends Matrix {
 
-    int[] rank;
-
     SquareMatrix() {
         super();
     }
 
     SquareMatrix(int lines) {
         super(lines, lines);
-        rank = new int[lines];
     }
 
     // Детерминант вычисляется рекурсивным разложением по столбцу (не по строке),
