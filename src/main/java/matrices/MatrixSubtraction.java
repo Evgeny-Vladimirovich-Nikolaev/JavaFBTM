@@ -1,7 +1,12 @@
-public class MatrixSubtraction extends MatrixAddition{
+public class MatrixSubtraction extends BinaryOperation {
 
     @Override
     Matrix calculate() {
-        return a.subtract(b);
+        return c = a.subtract(b);
+    }
+
+    @Override
+    String definiteOperation() {
+        return "разности";
     }
 }

@@ -102,4 +102,12 @@ public class Matrix {
         }
         return temp;
     }
+
+    void multiplyByNumber (int number) {
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                this.matrixArray[i][j] *= number;
+            }
+        }
+    }
 }
