@@ -1,15 +1,15 @@
-public class MatrixBuilder {
+public class SquareMatrixBuilder {
 
-    Matrix x;
+    SquareMatrix x;
     private int m, n;
 
-    MatrixBuilder(int rows, int columns) {
-        x = new Matrix(new int[rows][columns]);
+    SquareMatrixBuilder(int m) {
+        x = new SquareMatrix(m);
         m = x.getMatrixArray().length;
         n = x.getMatrixArray()[0].length;
     }
 
-    Matrix getMatrix() {
+    SquareMatrix getMatrix() {
         return x;
     }
 

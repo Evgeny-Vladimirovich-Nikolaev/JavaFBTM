@@ -65,7 +65,7 @@ abstract public class UnaryOperation {
     abstract void calculate(boolean isRandom);
 
     void writeReport() {
-        System.out.println("Матрица A");
+        System.out.println("Матрица A после " + definiteOperation());
         new MatrixPresentation(a).matrixToString();
     }
 

@@ -43,7 +43,7 @@ public class MatricesOperations {
     }
 
     private void multiplyByNumber() {
-
+        new Multiplier().chooseInitOptions();
     }
 
     private void multiplyByMatrix() {
@@ -55,6 +55,6 @@ public class MatricesOperations {
     }
 
     private void findDeterminantAndRank() {
-
+        new Determinant().chooseInitOptions();
     }
 }
