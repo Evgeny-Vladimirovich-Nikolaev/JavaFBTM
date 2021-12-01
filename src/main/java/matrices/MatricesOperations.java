@@ -29,8 +29,8 @@ public class MatricesOperations {
             case 2 -> subtractMatrix();
             case 3 -> multiplyByNumber();
             case 4 -> multiplyByMatrix();
-            case 5 -> powerMatrix();
-            case 6 -> findDeterminantAndRank();
+            case 5 -> transposeMatrix();
+            case 6 -> findDeterminant();
         }
     }
 
@@ -50,11 +50,11 @@ public class MatricesOperations {
         new MatricesProduct().chooseInitOptions();
     }
 
-    private void powerMatrix() {
-
+    private void transposeMatrix() {
+        new Transponder().chooseInitOptions();
     }
 
-    private void findDeterminantAndRank() {
+    private void findDeterminant() {
         new Determinant().chooseInitOptions();
     }
 }

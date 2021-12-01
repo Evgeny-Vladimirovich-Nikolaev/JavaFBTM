@@ -39,7 +39,7 @@ public class Determinant{
         NumberReceiver numberReceiver = new NumberReceiver();
         while(m < 1) {
             m = numberReceiver.receiveInt(MatrixMsg.SPECIFY_ROWS_NUMBER.getMsg()
-            + MatrixMsg.LINE_CONDITIONS);
+            + MatrixMsg.LINE_CONDITIONS.getMsg());
         }
         a = new SquareMatrix(m);
     }
