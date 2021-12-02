@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class SquareMatrixBuilder {
 
     SquareMatrix x;
@@ -15,16 +17,18 @@ public class SquareMatrixBuilder {
 
     void getRandomArray() {
         int[] values = new int[m * n];
+        Random random = new Random();
         for (int i = 0; i < m * n; i++) {
-            values[i] = (int) (Math.random() * 200) - 100;
+            values[i] = random.nextInt(201) - 100;
         }
         x.fillArrayMatrix(values);
     }
 
     void getRandomArray(int max) {
         int[] values = new int[m * n];
+        Random random = new Random();
         for (int i = 0; i < m * n; i++) {
-            values[i] = (int) (Math.random() * max * 2) - max;
+            values[i] = random.nextInt(max + 1) - max;
         }
         x.fillArrayMatrix(values);
     }

@@ -1,4 +1,4 @@
-public class AnimalVoice {
+abstract public class AnimalVoice {
 
     private String species;
 
@@ -6,9 +6,7 @@ public class AnimalVoice {
         this.species = species;
     }
 
-    void sing() {
-        System.out.println("РррррГавШшшшшшМяу");
-    }
+    abstract void sing();
 
     String getSpecies() {
         return species;

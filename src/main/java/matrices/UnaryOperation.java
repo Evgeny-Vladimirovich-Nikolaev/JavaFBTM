@@ -1,3 +1,5 @@
+import java.util.Random;
+
 abstract public class UnaryOperation {
 
     Matrix a;
@@ -23,8 +25,9 @@ abstract public class UnaryOperation {
     }
 
     void initRandomSizes() {
-        m = (int) (Math.random() * 10) + 1;
-        n = (int) (Math.random() * 10) + 1;
+        Random random = new Random();
+        m = random.nextInt(10) + 1;
+        n = random.nextInt(10) + 1;
     }
 
     Matrix getRandomMatrix() {

@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class MatrixDemo {
 
     void demonstrateMatrices() {
@@ -13,10 +15,11 @@ public class MatrixDemo {
 
     private void showRandomMatrices() {
         int[][] twoDemArr;
+        Random random = new Random();
         System.out.println("\n________________________________\nТРИ СЛУЧАЙНЫЕ МАТРИЦЫ");
         for (int i = 0; i < 3; i++) {
-            int rows = (int) (Math.random() * 5) + 1;
-            int columns = (int) (Math.random() * 5) + 1;
+            int rows = random.nextInt( 5) + 1;
+            int columns = random.nextInt( 5) + 1;
             twoDemArr = new int[rows][columns];
             fillArray(twoDemArr);
             Matrix matrix = new Matrix(twoDemArr);
@@ -25,9 +28,10 @@ public class MatrixDemo {
     }
 
     private void fillArray(int[][] twoDemArr) {
+        Random random = new Random();
         for (int row = 0; row < twoDemArr.length; row++) {
             for (int column = 0; column < twoDemArr[0].length; column++) {
-                twoDemArr[row][column] = (int) (Math.random() * 200) - 100;
+                twoDemArr[row][column] = random.nextInt(201) - 100;
             }
         }
     }

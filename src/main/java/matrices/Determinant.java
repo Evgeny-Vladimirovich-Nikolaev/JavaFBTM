@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Determinant {
 
     SquareMatrix a;
@@ -17,11 +19,12 @@ public class Determinant {
     }
 
     private void initRandomOperand() {
-        m = (int) (Math.random() * 10) + 1;
+        Random random = new Random();
+        m = random.nextInt(10) + 1;
         a = new SquareMatrix(m);
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < m; j++) {
-                a.getMatrixArray()[i][j] = (int) (Math.random() * 200) - 100;
+                a.getMatrixArray()[i][j] = random.nextInt(201) - 100;
             }
         }
         determinant = a.findDeterminant(a.getMatrixArray());

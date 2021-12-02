@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public abstract class BinaryOperation {
 
     Matrix a, b, c;
@@ -24,8 +26,9 @@ public abstract class BinaryOperation {
     }
 
     void initRandomSizes() {
-        m = (int) (Math.random() * 10) + 1;
-        n = (int) (Math.random() * 10) + 1;
+        Random random = new Random();
+        m = random.nextInt(10) + 1;
+        n = random.nextInt(10) + 1;
     }
 
     Matrix getRandomMatrix() {

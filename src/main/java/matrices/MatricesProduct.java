@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class MatricesProduct extends BinaryOperation {
 
     private int k;
@@ -13,9 +15,10 @@ public class MatricesProduct extends BinaryOperation {
 
     @Override
     void initRandomSizes() {
-        m = (int) (Math.random() * 10) + 1;
-        n = (int) (Math.random() * 10) + 1;
-        k = (int) (Math.random() * 10) + 1;
+        Random random = new Random();
+        m = random.nextInt(10) + 1;
+        n = random.nextInt(10) + 1;
+        k = random.nextInt(10) + 1;
     }
 
     // Перегрузка метода базового класса, неквадратные матрицы имеют разную размерность
