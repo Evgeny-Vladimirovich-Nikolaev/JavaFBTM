@@ -41,4 +41,6 @@ public final class Truck extends Automobile{
                             + (distance - (int) maxDistance / loadedCoef));
         }
     }
+
+
 }
