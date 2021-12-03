@@ -1,2 +1,2 @@
-public abstract class Converter {
+public class Converter {
 }

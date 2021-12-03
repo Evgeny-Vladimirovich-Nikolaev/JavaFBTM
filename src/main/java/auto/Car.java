@@ -14,16 +14,16 @@ public final class Car extends Automobile {
 
     @Override
     void writeReport(int distance) {
-        if(isArrived) {
+        if (isArrived) {
             System.out.printf(
-                    "Легковой автомобиль с номером %s успешно преодолел дистанцию в %s км."
-                    + licensePlate
-                    + distance);
+                    "Легковой автомобиль с номером %s успешно преодолел дистанцию в %s км.\n",
+                    licensePlate,
+                    distance);
         } else {
             System.out.printf(
-                    "Легковой автомобиль с номером %s не доехал %s км до заданной дистанции."
-                    + licensePlate
-                    + (distance - maxDistance));
+                    "Легковой автомобиль с номером %s не доехал %s км до заданной дистанции.\n",
+                    licensePlate,
+                    (distance - maxDistance));
         }
     }
 }
