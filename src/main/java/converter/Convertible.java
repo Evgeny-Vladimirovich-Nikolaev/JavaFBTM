@@ -1,5 +1,5 @@
 public interface Convertible {
 
-    int targetScale (int sourceScale, double factor, double addend);
+    int convertTemperature  (int sourceScale, boolean direction);
 
 }
