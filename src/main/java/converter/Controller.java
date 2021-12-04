@@ -25,7 +25,7 @@ public class Controller {
     }
 
     private void chooseOperation() {
-        while (choice < 0 || choice > 6) {
+        while (choice < 1 || choice > 6) {
             NumberReceiver numberReceiver = new NumberReceiver();
             choice = numberReceiver.receiveInt(Msg.CHOOSE_OPERATION.getMsg());
         }
@@ -62,15 +62,12 @@ public class Controller {
     }
 
     private void writeMessage(int src, int target) {
-        System.out.println("Значение в целевой системе равно " + target);
+        new Report(choice, src, target).writeValue();
         choice = -1;
     }
 
     private void writeMessage(int[] range, int[] target) {
-        System.out.println("Значения в целевой системе "
-                            + target[0]
-                            + "/"
-                            + target[1]);
+        new Report(choice, range, target).writeRange();
         choice = -1;
     }
 }
