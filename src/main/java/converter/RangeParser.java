@@ -6,7 +6,7 @@ public class RangeParser{
         StringBuilder val2 = new StringBuilder();
         int ind = 0;
         try{
-            while(ind < range.length() && range.charAt(ind) != '-') {
+            while(ind < range.length() && range.charAt(ind) != '/') {
                 val1.append(range.charAt(ind++));
             }
             while(++ind < range.length()) {
