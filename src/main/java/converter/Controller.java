@@ -5,10 +5,10 @@ public class Controller {
     private int[] range;
 
     void initActions() {
-        while (resume()) {
+        do {
             chooseOperation();
             initData();
-        }
+        } while (resume());
     }
 
     private boolean resume() {
@@ -45,12 +45,14 @@ public class Controller {
             String data = stringReceiver.receive(Msg.CONDITION.getMsg());
             try {
                 value = Integer.parseInt(data);
+                convertible.convert(value);
                 break;
             } catch (NumberFormatException ex) {
-                try{
-                    new RangeParser().parseArray(data);
+                try {
+                    range = new RangeParser().parseArray(data);
+                    convertible.convert(range);
                 } catch (Exception e) {
-                    System.out.println("Ошибка ввода данных");
+                    System.out.println(Msg.DATA_ERROR.getMsg());
                 }
 
             }

@@ -15,8 +15,8 @@ public class RangeParser{
             arr[0] = Integer.parseInt(val1.toString());
             arr[1] = Integer.parseInt(val2.toString());
         } catch (NumberFormatException numEx){
-
+            return null;
         }
-        return null;
+        return arr;
     }
 }
