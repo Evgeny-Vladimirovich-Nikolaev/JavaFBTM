@@ -20,6 +20,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/animalsVoice" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/converter" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/auto" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/arrays" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
