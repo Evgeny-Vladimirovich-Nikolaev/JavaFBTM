@@ -20,12 +20,4 @@ public class CelsiusFahrenheit implements Convertible
             ));
         }
     }
-
-    @Override
-    public int[] convert(int sourceScale[], boolean direction) {
-        if(sourceScale.length != 2) {
-            return null;
-        }
-        return new int[0];
-    }
 }

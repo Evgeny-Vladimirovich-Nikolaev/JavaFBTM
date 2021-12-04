@@ -8,5 +8,4 @@ public class CelsiusKelvin implements Convertible{
             return (int) (Math.round(sourceScale - ConvertCf.CELS_KEL.getCf()));
         }
     }
-
 }
