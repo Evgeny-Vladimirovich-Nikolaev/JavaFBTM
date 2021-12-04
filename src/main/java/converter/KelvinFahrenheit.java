@@ -1,7 +1,11 @@
-public class KelvinFahrenheit implements Convertible {
+public class KelvinFahrenheit extends Converter implements Convertible {
+
+    KelvinFahrenheit (boolean direction) {
+        super(direction);
+    }
 
     @Override
-    public int convert(int sourceScale, boolean direction) {
+    public int convert(int sourceScale) {
         if(direction) {
             return (int) (Math.round(
                 ConvertCf.CELS_FAHR_FACTOR.getCf()

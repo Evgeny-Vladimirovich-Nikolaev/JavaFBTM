@@ -1,4 +1,4 @@
-public enum Constants {
+public enum ConvertCf {
 
     CELS_FAHR_ADDENDS(32.0),
     CELS_FAHR_FACTOR(1.8),
@@ -6,7 +6,7 @@ public enum Constants {
 
     private double cf;
 
-    Constants(double cf) {
+    ConvertCf(double cf) {
         this.cf = cf;
     }
 
