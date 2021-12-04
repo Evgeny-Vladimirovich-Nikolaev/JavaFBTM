@@ -11,5 +11,4 @@ public interface Convertible {
         result[1] = convert(sourceScale[1], direction);
         return result;
     }
-
 }

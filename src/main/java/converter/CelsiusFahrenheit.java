@@ -1,6 +1,3 @@
-import java.beans.PropertyEditorSupport;
-import java.util.Arrays;
-
 public class CelsiusFahrenheit implements Convertible
 
 {
