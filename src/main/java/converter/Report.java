@@ -41,12 +41,12 @@ public class Report{
     void writeRange() {
         System.out.println(
                 "Конвертация значений "
-                        + srcRange[0]
-                        +'/'
-                        + srcRange[1]
-                        + detail
-                        + targetRange[0]
-                        + '/'
-                        + targetRange[1]);
+                + srcRange[0]
+                +'/'
+                + srcRange[1]
+                + detail
+                + targetRange[0]
+                + '/'
+                + targetRange[1]);
     }
 }
