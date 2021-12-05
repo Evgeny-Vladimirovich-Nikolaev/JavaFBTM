@@ -15,7 +15,7 @@ class AutomobileRunner {
         }
         for (int i = 5; i < 10; i++) {
             Truck truck = new Truck(new LicenseGenerator().generate());
-            truck.setLoaded(new Random().nextInt(2) % 2 == 0);
+            truck.setLoaded(new Random().nextInt(3) % 2 == 0);
             automobiles[i] = truck;
         }
         return automobiles;
