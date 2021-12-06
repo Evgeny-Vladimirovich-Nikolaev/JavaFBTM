@@ -4,7 +4,7 @@ public interface Convertible {
 
     default int[] convert(int[] sourceScale) {
         if(sourceScale.length != 2) {
-            return null;
+            throw new IllegalArgumentException("");
         }
         int[] result = new int[2];
         result[0] = convert(sourceScale[0]);
