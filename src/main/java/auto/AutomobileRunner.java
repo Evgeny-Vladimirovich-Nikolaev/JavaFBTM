@@ -2,14 +2,13 @@ import java.util.Random;
 
 class AutomobileRunner {
 
-    private static Automobile[] automobiles;
+    private static Automobile[] automobiles = createList();
 
     public static void main(String[] args) {
-        createList();
         run();
     }
 
-    private static void createList() {
+    private static Automobile[] createList() {
         automobiles = new Automobile[10];
         for (int i = 0; i < 5; i++) {
             automobiles[i] = new Car(new LicenseGenerator().generate());
@@ -19,6 +18,7 @@ class AutomobileRunner {
             truck.setLoaded(new Random().nextInt(2) % 2 == 0);
             automobiles[i] = truck;
         }
+        return automobiles;
     }
 
     private static void run() {
