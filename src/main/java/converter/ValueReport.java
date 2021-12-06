@@ -1,3 +1,5 @@
+import java.text.MessageFormat;
+
 class ValueReport {
 
     private int choice, src, target;
@@ -24,6 +26,7 @@ class ValueReport {
 
     @Override
     public String toString() {
+        String s = MessageFormat.format("a{1}sbcdefgh", 4);
         StringBuilder sb = new StringBuilder(Msg.VAL_REPORT.getMsg());
         sb.append(src);
         sb.append(detail);

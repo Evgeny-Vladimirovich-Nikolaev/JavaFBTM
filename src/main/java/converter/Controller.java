@@ -42,7 +42,7 @@ public class Controller {
                     writeMessage(range, convertible.convert(range));
                     break;
                 } catch (NullPointerException e) {
-                    System.out.println(Msg.DATA_ERROR.getMsg());
+                    System.out.println(Msg.FORMAT_ERROR.getMsg());
                 }
             }
         }

@@ -1,3 +1,5 @@
+import java.text.MessageFormat;
+
 public class CelsiusFahrenheit extends Converter implements Convertible
 
 {
@@ -7,6 +9,11 @@ public class CelsiusFahrenheit extends Converter implements Convertible
 
     @Override
     public int convert(int sourceScale) {
+        if(sourceScale < -273) {
+            throw new IllegalArgumentException(
+                    MessageFormat.format(Msg.DATA_ERROR.getMsg(), "Цельсия", -273));
+
+        }
         if(direction) {
             return (int) (Math.round(
                     sourceScale

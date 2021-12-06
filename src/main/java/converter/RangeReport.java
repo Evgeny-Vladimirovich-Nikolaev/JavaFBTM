@@ -36,7 +36,7 @@ class RangeReport {
             sb.append(targetRange[1]);
             return sb.toString();
         } catch (NullPointerException e) {
-            return Msg.DATA_ERROR.getMsg();
+            return Msg.FORMAT_ERROR.getMsg();
         }
     }
 }

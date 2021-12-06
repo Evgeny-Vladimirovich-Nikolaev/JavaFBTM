@@ -1,8 +1,8 @@
 public interface Convertible {
 
-    int convert(int sourceScale);
+    int convert (int sourceScale);
 
-    default int[] convert(int[] sourceScale) {
+    default int[] convert (int[] sourceScale) {
         if(sourceScale.length != 2) {
             throw new IllegalArgumentException("");
         }
