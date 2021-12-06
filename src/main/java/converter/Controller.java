@@ -12,18 +12,6 @@ public class Controller {
         } while (resume());
     }
 
-    private boolean resume() {
-        StringReceiver receiver = new StringReceiver();
-        String response = "";
-        while (!"Y".equalsIgnoreCase(response) && !"N".equalsIgnoreCase(response)) {
-            response = receiver.receive(Msg.REQUEST.getMsg());
-        }
-        if ("Y".equalsIgnoreCase(response)) {
-            StringReceiver.close();
-        }
-        return "N".equalsIgnoreCase(response);
-    }
-
     private void chooseOperation() {
         while (choice < 1 || choice > 6) {
             NumberReceiver numberReceiver = new NumberReceiver();
@@ -53,21 +41,33 @@ public class Controller {
                     range = new RangeParser().parseArray(data);
                     writeMessage(range, convertible.convert(range));
                     break;
-                } catch (Exception e) {
+                } catch (NullPointerException e) {
                     System.out.println(Msg.DATA_ERROR.getMsg());
                 }
-
             }
         }
     }
 
+    private boolean resume() {
+        StringReceiver receiver = new StringReceiver();
+        String response = "";
+        while (!"Y".equalsIgnoreCase(response) && !"N".equalsIgnoreCase(response)) {
+            response = receiver.receive(Msg.REQUEST.getMsg());
+        }
+        if ("Y".equalsIgnoreCase(response)) {
+            Receiver.close();
+        }
+        return "N".equalsIgnoreCase(response);
+    }
+
     private void writeMessage(int src, int target) {
-        new Report(choice, src, target).writeValue();
+        System.out.println(new ValueReport(choice, src, target));
         choice = -1;
     }
 
     private void writeMessage(int[] range, int[] target) {
-        new Report(choice, range, target).writeRange();
+        System.out.println(new RangeReport(choice, range, target));
         choice = -1;
     }
 }
+
