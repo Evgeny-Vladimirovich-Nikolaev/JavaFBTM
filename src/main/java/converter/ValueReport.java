@@ -26,11 +26,10 @@ class ValueReport {
 
     @Override
     public String toString() {
-        String s = MessageFormat.format("a{1}sbcdefgh", 4);
-        StringBuilder sb = new StringBuilder(Msg.VAL_REPORT.getMsg());
-        sb.append(src);
-        sb.append(detail);
-        sb.append(target);
-        return sb.toString();
+        return MessageFormat.format(
+            Msg.VAL_REPORT.getMsg(),
+            src,
+            detail,
+            target);
     }
 }

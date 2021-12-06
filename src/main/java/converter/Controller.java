@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 public class Controller {
 
     private Convertible convertible;
@@ -31,18 +33,27 @@ public class Controller {
         StringReceiver stringReceiver = new StringReceiver();
         while (true) {
             String data = stringReceiver.receive(Msg.CONDITION.getMsg());
-            try {
-                value = Integer.parseInt(data);
-                convertible.convert(value);
-                writeMessage(value, convertible.convert(value));
-                break;
-            } catch (NumberFormatException ex) {
+            String regex = ".*/.*";
+            if (!Pattern.matches(regex, data)) {
+                try {
+                    value = Integer.parseInt(data);
+                    convertible.convert(value);
+                    writeMessage(value, convertible.convert(value));
+                    break;
+                } catch (NumberFormatException ex) {
+                    System.out.println(Msg.FORMAT_ERROR.getMsg());
+                } catch (IllegalArgumentException argEx) {
+                    System.out.println(argEx);
+                }
+            } else {
                 try {
                     range = new RangeParser().parseArray(data);
                     writeMessage(range, convertible.convert(range));
                     break;
-                } catch (NullPointerException e) {
-                    System.out.println(Msg.FORMAT_ERROR.getMsg());
+                } catch (IllegalArgumentException argEx) {
+                    System.out.println(argEx);
+                } catch (Exception e) {
+                    System.out.println(Msg.ERROR.getMsg());
                 }
             }
         }

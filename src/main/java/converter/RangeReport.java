@@ -1,3 +1,5 @@
+import java.text.MessageFormat;
+
 class RangeReport {
 
     private int choice;
@@ -25,18 +27,12 @@ class RangeReport {
 
     @Override
     public String toString() {
-        try {
-            StringBuilder sb = new StringBuilder(Msg.RANGE_REPORT.getMsg());
-            sb.append(srcRange[0]);
-            sb.append('/');
-            sb.append(srcRange[1]);
-            sb.append(detail);
-            sb.append(targetRange[0]);
-            sb.append('/');
-            sb.append(targetRange[1]);
-            return sb.toString();
-        } catch (NullPointerException e) {
-            return Msg.FORMAT_ERROR.getMsg();
-        }
+        return MessageFormat.format(
+                Msg.RANGE_REPORT.getMsg(),
+                srcRange[0],
+                srcRange[1],
+                detail,
+                targetRange[0],
+                targetRange[1]);
     }
 }
