@@ -22,6 +22,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/auto" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/arrays" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/receiver" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/expirience" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
