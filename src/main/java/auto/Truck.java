@@ -28,17 +28,17 @@ public final class Truck extends Automobile {
         if (isArrived) {
             System.out.printf(
                     "Грузовой автомобиль c номером %s успешно предолел дистанцию в %s км.\n",
-                    licensePlate,
+                    getLicensePlate(),
                     distance);
         } else if (!isLoaded) {
             System.out.printf(
                     "Грузовой автомобиль с номером %s не доехал %s км до заданной дистанции.\n",
-                    licensePlate,
+                    getLicensePlate(),
                     (distance - maxDistance));
         } else {
             System.out.printf(
                     "Грузовой автомобиль с номером %s не доехал %s км до заданной дистанции.\n",
-                    licensePlate,
+                    getLicensePlate(),
                     (distance - (int) (maxDistance / loadedCoef)));
         }
     }

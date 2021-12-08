@@ -8,7 +8,7 @@ public final class Car extends Automobile {
 
     @Override
     public void move(int distance) {
-        isArrived = distance <= maxDistance;
+        isArrived = (distance <= maxDistance);
         writeReport(distance);
     }
 
@@ -17,12 +17,12 @@ public final class Car extends Automobile {
         if (isArrived) {
             System.out.printf(
                     "Легковой автомобиль с номером %s успешно преодолел дистанцию в %s км.\n",
-                    licensePlate,
+                    getLicensePlate(),
                     distance);
         } else {
             System.out.printf(
                     "Легковой автомобиль с номером %s не доехал %s км до заданной дистанции.\n",
-                    licensePlate,
+                    getLicensePlate(),
                     (distance - maxDistance));
         }
     }
