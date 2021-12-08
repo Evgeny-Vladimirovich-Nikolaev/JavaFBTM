@@ -1,8 +1,8 @@
-public final class Truck extends Automobile {
+public final class Truck extends Automobile implements Movable {
 
     private final static int maxDistance = 1200;
     private final static double loadedCoef = 1.5;   // коэффициент расхода топлива
-                                                    // при полной загрузке
+    // при полной загрузке
     private boolean isLoaded;                       // загружен?
 
     public Truck(String licensePlate) {
@@ -16,16 +16,16 @@ public final class Truck extends Automobile {
     @Override
     public void move(int distance) {
         if (!isLoaded) {
-            isArrived = distance <= maxDistance;
+            setArrived(distance <= maxDistance);
         } else {
-            isArrived = distance <= (int) (maxDistance / loadedCoef);
+            setArrived(distance <= (int) (maxDistance / loadedCoef));
         }
         writeReport(distance);
     }
 
     @Override
-    void writeReport(int distance) {
-        if (isArrived) {
+    public void writeReport(int distance) {
+        if (isArrived()) {
             System.out.printf(
                     "Грузовой автомобиль c номером %s успешно предолел дистанцию в %s км.\n",
                     getLicensePlate(),
