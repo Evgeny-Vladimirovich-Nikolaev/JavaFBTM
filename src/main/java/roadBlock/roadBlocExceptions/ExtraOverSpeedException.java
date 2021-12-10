@@ -10,21 +10,17 @@ public class ExtraOverSpeedException extends OverSpeedException{
         super(message);
     }
 
-    public ExtraOverSpeedException(String message, int speed) {
+    ExtraOverSpeedException(String message, int speed){
         super(message);
         this.speed = speed;
-    }
-
-    ExtraOverSpeedException(String message, Throwable t){
-        super(message, t);
     }
 
     @Override
     public String toString() {
         if (speed != 0) {
-            return speed + "км/ч - превышение скорости!";
+            return speed + "км/ч - экстремальное превышение скорости!";
         } else {
-            return "Превышение скорости!";
+            return "Экстремальное превышение скорости!";
         }
     }
 }

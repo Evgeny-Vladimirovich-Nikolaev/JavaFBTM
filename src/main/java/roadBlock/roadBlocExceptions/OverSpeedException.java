@@ -10,10 +10,6 @@ public class OverSpeedException extends RuntimeException{
         super(message);
     }
 
-    public OverSpeedException(String message, Throwable throwable) {
-        super (message, throwable);
-    }
-
     public OverSpeedException(String message, int speed) {
         super(message);
         this.speed = speed;

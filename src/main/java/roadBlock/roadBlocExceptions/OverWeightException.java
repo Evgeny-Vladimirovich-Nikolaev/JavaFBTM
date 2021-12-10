@@ -1,16 +1,16 @@
-public class OverLoadException extends RuntimeException{
+public class OverWeightException extends RuntimeException{
 
     private double weight;
 
-    private OverLoadException() {
+    private OverWeightException() {
         super();
     }
 
-    public OverLoadException(String message) {
+    public OverWeightException(String message) {
         super(message);
     }
 
-    public OverLoadException(String message, double weight) {
+    public OverWeightException(String message, double weight) {
         super(message);
         this.weight = weight;
     }
