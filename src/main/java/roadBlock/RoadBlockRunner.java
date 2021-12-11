@@ -7,12 +7,11 @@ public class RoadBlockRunner {
     public static void main(String[] args) {
         List<Crossable> auto = new ArrayList<>(50);
         for(int i = 0; i  < 50; i++) {
-            if(new Random().nextBoolean()){
-                auto.add(createCar());
+            System.out.println(new Random().nextInt(1, 2));
             }
 
             /*boolean isCrossed = false;
-            Crossable nonStandardCar = new NonStandardCar(new LicenseGenerator().getNewLicense());
+            Crossable nonStandardCar = new CustomCar(new LicenseGenerator().getNewLicense());
             try{
                 nonStandardCar.roadBlockCross(i);
                 isCrossed = true;
@@ -37,9 +36,9 @@ public class RoadBlockRunner {
         }
 
 
-    }
+
 
     private static Crossable createCar() {
-        return new NonStandardCar(new LicenseGenerator().getNewLicense());
+        return new CustomCar(new LicenseGenerator().getNewLicense());
     }
 }

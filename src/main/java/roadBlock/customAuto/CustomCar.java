@@ -1,4 +1,4 @@
-public class NonStandardCar extends Automobile implements Crossable{
+public class CustomCar extends Automobile implements Crossable{
 
     private int speed;
     private double weight;
@@ -8,16 +8,16 @@ public class NonStandardCar extends Automobile implements Crossable{
 
 
 
-    public NonStandardCar(String licensePlate) {
+    public CustomCar(String licensePlate) {
         super(licensePlate);
     }
 
-    public NonStandardCar(String licensePlate,
-                          int speed,
-                          double weight,
-                          double width,
-                          double height,
-                          double length) {
+    public CustomCar(String licensePlate,
+                     int speed,
+                     double weight,
+                     double width,
+                     double height,
+                     double length) {
         super(licensePlate);
         this.speed = speed;
         this.weight = weight;
