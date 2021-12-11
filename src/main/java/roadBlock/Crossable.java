@@ -1,4 +1,4 @@
 public interface Crossable {
 
-    boolean roadBlockCross(int speed);
+    void roadBlockCross(int speed);
 }

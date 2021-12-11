@@ -1,15 +1,21 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class RoadBlockRunner {
 
     public static void main(String[] args) {
-        boolean arrived = true;
-        List<Automobile> auto = new ArrayList<>(10);
-        for(int i = 55; i  < 150; i += 5) {
+        List<Crossable> auto = new ArrayList<>(50);
+        for(int i = 0; i  < 50; i++) {
+            if(new Random().nextBoolean()){
+                auto.add(createCar());
+            }
+
+            /*boolean isCrossed = false;
             Crossable nonStandardCar = new NonStandardCar(new LicenseGenerator().getNewLicense());
             try{
-                arrived = nonStandardCar.roadBlockCross(i);
+                nonStandardCar.roadBlockCross(i);
+                isCrossed = true;
             } catch (ExtraOverSpeedException e) {
                 System.out.println("-----------------------");
                 System.out.println("-----------------------");
@@ -26,8 +32,14 @@ public class RoadBlockRunner {
 
             } finally {
                 Automobile nonStandardCar1 = (Automobile) nonStandardCar;
-                System.out.println(nonStandardCar1.getLicensePlate() + " " + arrived);
-            }
+                System.out.println(nonStandardCar1.getLicensePlate() + " " + isCrossed);
+            }*/
         }
+
+
+    }
+
+    private static Crossable createCar() {
+        return new NonStandardCar(new LicenseGenerator().getNewLicense());
     }
 }
