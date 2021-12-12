@@ -6,10 +6,6 @@ public class CustomTruck  extends CustomAuto implements Crossable{
     private double height;
     private double length;
 
-    public CustomTruck(String licensePlate) {
-        super(licensePlate);
-    }
-
     public CustomTruck(String licensePlate,
                      int speed,
                      double weight,
@@ -25,13 +21,33 @@ public class CustomTruck  extends CustomAuto implements Crossable{
     }
 
     @Override
-    public void roadBlockCross() {
+    public boolean roadBlockCross() {
+        if(speed > 100) {
+            throw new ExtraOverSpeedException(
+                    "Экстремальное превышение скорости!",
+                    speed);
+        }
         if(speed > 80) {
-            throw new ExtraOverSpeedException("Превышение скорости!", speed);
+            throw new OverSpeedException(
+                    "Превышение скорости!",
+                    speed);
         }
-        if(speed > 60) {
-            throw new OverSpeedException("Превышение скорости!", speed);
+        if(weight > 8.0) {
+            throw new OverWeightException(
+                    "Превышение допустимой массы автомобиля!",
+                    weight);
         }
+        if(height > 4.0) {
+            throw new OverHeightException(
+                    "Превышение допустимой высоты транспортного средства!",
+                    height);
+        }
+        if(width > 2.5) {
+            throw new OverWidthException(
+                    "Превышение допустимой ширины транспортного средства!",
+                    width);
+        }
+        return true;
     }
 
     public int getSpeed() {

@@ -18,7 +18,7 @@ public class ExtraOverSpeedException extends OverSpeedException{
     @Override
     public String toString() {
         if (speed != 0) {
-            return speed + "км/ч - экстремальное превышение скорости!";
+            return speed + " км/ч - экстремальное превышение скорости!";
         } else {
             return "Экстремальное превышение скорости!";
         }

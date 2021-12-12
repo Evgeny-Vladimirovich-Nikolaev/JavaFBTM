@@ -18,7 +18,7 @@ public class OverSpeedException extends RuntimeException{
     @Override
     public String toString() {
         if (speed != 0) {
-            return speed + "км/ч - превышение скорости!";
+            return speed + " км/ч - превышение скорости!";
         } else {
             return "Превышение скорости!";
         }

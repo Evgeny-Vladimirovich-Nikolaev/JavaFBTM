@@ -18,7 +18,7 @@ public class OverWidthException extends RuntimeException{
     @Override
     public String toString() {
         if (width != 0.0) {
-            return width + "м - превышение допустимой ширины автомобиля!";
+            return width + " м - превышение допустимой ширины автомобиля!";
         } else {
             return "Превышение допустимой ширины автомобиля!";
         }

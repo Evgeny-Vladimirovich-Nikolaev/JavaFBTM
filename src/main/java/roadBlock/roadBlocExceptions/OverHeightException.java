@@ -18,7 +18,7 @@ public class OverHeightException extends RuntimeException {
     @Override
     public String toString() {
         if (height != 0.0) {
-            return height + "т - превышение допустимой высоты автомобиля!";
+            return height + " м - превышение допустимой высоты автомобиля!";
         } else {
             return "Превышение допустимой высоты автомобиля!";
         }

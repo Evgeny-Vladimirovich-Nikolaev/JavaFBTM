@@ -1,4 +1,4 @@
-public class CustomCar extends CustomAuto implements Crossable{
+public class CustomCar extends CustomAuto implements Crossable {
 
     private int speed;
     private double weight;
@@ -6,16 +6,12 @@ public class CustomCar extends CustomAuto implements Crossable{
     private double height;
     private double length;
 
-    public CustomCar(String licensePlate) {
-        super(licensePlate);
-    }
-
-    public CustomCar(String licensePlate,
-                     int speed,
-                     double weight,
-                     double width,
-                     double height,
-                     double length) {
+    CustomCar(String licensePlate,
+              int speed,
+              double weight,
+              double width,
+              double height,
+              double length) {
         super(licensePlate);
         this.speed = speed;
         this.weight = weight;
@@ -25,32 +21,52 @@ public class CustomCar extends CustomAuto implements Crossable{
     }
 
     @Override
-    public void roadBlockCross() {
-        if(speed > 80) {
-            throw new ExtraOverSpeedException("Превышение скорости!", speed);
+    public boolean roadBlockCross() {
+        if (speed > 100) {
+            throw new ExtraOverSpeedException(
+                    "Экстремальное превышение скорости!",
+                    speed);
         }
-        if(speed > 60) {
-            throw new OverSpeedException("Превышение скорости!", speed);
+        if (speed > 80) {
+            throw new OverSpeedException(
+                    "Превышение скорости!",
+                    speed);
         }
+        if (weight > 8.0) {
+            throw new OverWeightException(
+                    "Превышение допустимой массы автомобиля!",
+                    weight);
+        }
+        if (height > 4.0) {
+            throw new OverHeightException(
+                    "Превышение допустимой высоты транспортного средства!",
+                    height);
+        }
+        if (width > 2.5) {
+            throw new OverWidthException(
+                    "Превышение допустимой ширины транспортного средства!",
+                    width);
+        }
+        return true;
     }
 
-    public int getSpeed() {
+    int getSpeed() {
         return speed;
     }
 
-    public double getWeight() {
+    double getWeight() {
         return weight;
     }
 
-    public double getWidth() {
+    double getWidth() {
         return width;
     }
 
-    public double getHeight() {
+    double getHeight() {
         return height;
     }
 
-    public double getLength() {
+    double getLength() {
         return length;
     }
 }
