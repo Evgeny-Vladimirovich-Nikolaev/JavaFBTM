@@ -3,17 +3,17 @@ import java.util.List;
 
 public class RoadBlock {
 
-    private static int speedLimit = 80;
-    private static int extraSpeedLimit = 100;
-    private static double weightLimit = 8.0;
-    private static double heightLimit = 4.0;
-    private static double widthLimit = 2.5;
+    private final static int SPEED_LIMIT = 80;
+    private final static int EXTRA_SPEED_LIMIT = 100;
+    private final static double WEIGHT_LIMIT = 8.0;
+    private final static double HEIGHT_LIMIT = 4.0;
+    private final static double WIDTH_LIMIT = 2.5;
 
-   private List<Automobile> automobiles;
+   private List<Crossable> automobiles;
 
     RoadBlock() {}
 
-    RoadBlock(ArrayList<Automobile> automobiles) {
+    RoadBlock(ArrayList<Crossable> automobiles) {
         this.automobiles = automobiles;
     }
 }

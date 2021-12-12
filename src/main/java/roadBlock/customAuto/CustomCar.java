@@ -27,7 +27,7 @@ public class CustomCar extends Automobile implements Crossable{
     }
 
     @Override
-    public void roadBlockCross(int speed) {
+    public void roadBlockCross() {
         if(speed > 80) {
             throw new ExtraOverSpeedException("Превышение скорости!", speed);
         }
