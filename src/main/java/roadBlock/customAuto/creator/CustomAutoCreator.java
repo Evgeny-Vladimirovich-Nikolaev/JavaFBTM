@@ -46,12 +46,12 @@ public abstract class CustomAutoCreator {
     protected abstract Crossable createCustomAuto();
 
     protected void initFields() {
-        String licensePlate = licenseGenerator.getNewLicense();
-        int speed = initSpeed();
-        double weight = initDouble(weightMin, weightMax);
-        double width = initDouble(widthMin, widthMax);
-        double height = initDouble(heightMin, heightMax);
-        double length = initDouble(lengthMin, lengthMax);
+        licensePlate = licenseGenerator.getNewLicense();
+        speed = initSpeed();
+        weight = initDouble(weightMin, weightMax);
+        width = initDouble(widthMin, widthMax);
+        height = initDouble(heightMin, heightMax);
+        length = initDouble(lengthMin, lengthMax);
     }
 
     private int initSpeed() {

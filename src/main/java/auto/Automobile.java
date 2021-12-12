@@ -18,6 +18,4 @@ public abstract class Automobile {
     String getLicensePlate() {
         return licensePlate;
     }
-
-
 }

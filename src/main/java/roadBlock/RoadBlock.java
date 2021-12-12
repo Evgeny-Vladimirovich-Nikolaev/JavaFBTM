@@ -9,11 +9,23 @@ public class RoadBlock {
     private final static double HEIGHT_LIMIT = 4.0;
     private final static double WIDTH_LIMIT = 2.5;
 
-   private List<Crossable> automobiles;
+    private List<Crossable> automobiles;
 
-    RoadBlock() {}
+    RoadBlock() {
+    }
 
     RoadBlock(ArrayList<Crossable> automobiles) {
         this.automobiles = automobiles;
+    }
+
+    void simulateCross() {
+        for (Crossable auto : automobiles) {
+            try{
+                CustomAuto a = (CustomAuto) auto;
+
+            } catch (ExtraOverSpeedException e) {
+
+            }
+        }
     }
 }

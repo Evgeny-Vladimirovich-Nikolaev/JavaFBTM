@@ -1,4 +1,4 @@
-public class CustomCar extends CustomAuto implements Crossable{
+public class CustomTruck  extends CustomAuto implements Crossable{
 
     private int speed;
     private double weight;
@@ -6,11 +6,11 @@ public class CustomCar extends CustomAuto implements Crossable{
     private double height;
     private double length;
 
-    public CustomCar(String licensePlate) {
+    public CustomTruck(String licensePlate) {
         super(licensePlate);
     }
 
-    public CustomCar(String licensePlate,
+    public CustomTruck(String licensePlate,
                      int speed,
                      double weight,
                      double width,
