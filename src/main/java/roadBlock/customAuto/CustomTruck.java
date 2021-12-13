@@ -50,23 +50,28 @@ public class CustomTruck  extends CustomAuto implements Crossable{
         return true;
     }
 
-    public int getSpeed() {
+    @Override
+    int getSpeed() {
         return speed;
     }
 
-    public double getWeight() {
+    @Override
+    double getWeight() {
         return weight;
     }
 
-    public double getWidth() {
+    @Override
+    double getWidth() {
         return width;
     }
 
-    public double getHeight() {
+    @Override
+    double getHeight() {
         return height;
     }
 
-    public double getLength() {
+    @Override
+    double getLength() {
         return length;
     }
 }

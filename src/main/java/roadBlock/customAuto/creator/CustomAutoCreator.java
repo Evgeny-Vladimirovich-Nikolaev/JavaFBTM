@@ -63,5 +63,4 @@ public abstract class CustomAutoCreator {
         int n = (int) (Math.round(max * 10));
         return (double) (new Random().nextInt(m, n + 1)) / 10;
     }
-
 }

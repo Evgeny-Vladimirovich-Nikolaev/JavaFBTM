@@ -2,7 +2,7 @@ public class OverHeightException extends RuntimeException {
 
     private double height;
 
-    private OverHeightException() {
+    public OverHeightException() {
         super();
     }
 

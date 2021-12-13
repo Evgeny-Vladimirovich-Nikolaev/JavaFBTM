@@ -6,13 +6,17 @@ public abstract class CustomAuto {
         this.licensePlate = licensePlate;
     }
 
-    String getLicensePlate() {
+    protected String getLicensePlate() {
         return licensePlate;
     }
 
     abstract int getSpeed();
+
     abstract double getWeight();
+
     abstract double getWidth();
+
     abstract double getHeight();
+
     abstract double getLength();
 }

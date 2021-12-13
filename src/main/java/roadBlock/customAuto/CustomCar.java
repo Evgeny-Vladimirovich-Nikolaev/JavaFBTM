@@ -50,22 +50,27 @@ public class CustomCar extends CustomAuto implements Crossable {
         return true;
     }
 
+    @Override
     int getSpeed() {
         return speed;
     }
 
+    @Override
     double getWeight() {
         return weight;
     }
 
+    @Override
     double getWidth() {
         return width;
     }
 
+    @Override
     double getHeight() {
         return height;
     }
 
+    @Override
     double getLength() {
         return length;
     }

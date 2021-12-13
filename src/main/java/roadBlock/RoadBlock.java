@@ -14,37 +14,49 @@ public class RoadBlock {
             boolean isCross = false;
             try {
                 isCross = crossable.roadBlockCross();
-            } catch (ExtraOverSpeedException e) {
-                System.out.println(e);
-            } catch (OverSpeedException e) {
-                System.out.println(e);
-            } catch (OverWeightException e) {
-                System.out.println(e);
-            } catch (OverHeightException e) {
-                System.out.println(e);
-            } catch (OverWidthException e) {
-                System.out.println(e);
+            } catch (ExtraOverSpeedException extraSpeed) {
+                System.out.println(extraSpeed);
+            } catch (OverSpeedException | OverWeightException | OverHeightException | OverWidthException exc) {
+                System.out.println(exc);
             } finally {
                 writeMessage(crossable, isCross);
-                if (isCross) {
-                    System.out.println(crossable.getClass() + " " + isCross);
-                } else {
-                    System.out.println(crossable.getClass() + " " + isCross);
-                }
             }
         }
     }
 
     private void writeMessage(Crossable crossable, boolean isCross) {
-        String autoType;
+        StringBuilder msg;
         CustomAuto customAuto;
         if (crossable.getClass().getName().equals("CustomCar")) {
-            autoType = "Легковой автомобиль";
+            msg = new StringBuilder("Легковой автомобиль с регистрационным номером ");
             customAuto = (CustomCar) crossable;
         } else {
-            autoType = "Грузовой автомобиль";
+            msg = new StringBuilder("Грузовой автомобиль с регистрационным номером ");
             customAuto = (CustomTruck) crossable;
         }
-        System.out.println(autoType + " " + customAuto.getLicensePlate());
+        msg.append(customAuto.getLicensePlate());
+        if (isCross) {
+            msg.append(" проехал КПП.\n");
+        } else {
+            msg.append(" не проехал КПП.\n");
+        }
+        msg.append(getDetails(customAuto));
+        msg.append("\n----------------------------------------------------------------------");
+        System.out.println(msg);
+    }
+
+    private String getDetails(CustomAuto customAuto) {
+        StringBuilder sb = new StringBuilder("Отчет\nСкорость: ");
+        sb.append(customAuto.getSpeed());
+        sb.append(" км/ч\nВес: ");
+        sb.append(customAuto.getWeight());
+        sb.append(" т\nШирина: ");
+        sb.append(customAuto.getWidth());
+        sb.append(" м\nВысота: ");
+        sb.append(customAuto.getHeight());
+        sb.append(" м\nДлина: ");
+        sb.append(customAuto.getLength());
+        sb.append(" м");
+        return sb.toString();
     }
 }
