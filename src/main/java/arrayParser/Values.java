@@ -9,7 +9,7 @@ public enum Values {
     SEVEN("7"),
     EIGHT("8"),
     NINE("9"),
-    TEN("10"),
+    TEN("ten"),
     ELEVEN("11"),
     TWELVE("12"),
     THIRTEEN("13"),

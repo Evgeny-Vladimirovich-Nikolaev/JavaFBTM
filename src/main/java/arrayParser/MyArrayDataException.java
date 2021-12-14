@@ -1,4 +1,6 @@
-public class MyArrayDataException extends Exception{
+import java.text.MessageFormat;
+
+public class MyArrayDataException extends Exception {
 
     public MyArrayDataException() {
         super();
@@ -8,7 +10,12 @@ public class MyArrayDataException extends Exception{
         super(message);
     }
 
-    public MyArrayDataException(int rows, int columns) {
-        super("В ячейке [" + rows + "][" + columns + "] массива String содержатся неверные данные");
+    public MyArrayDataException(int rows, int columns, String value, Throwable throwable) {
+       super(MessageFormat.format(
+                "В ячейке [{0}][{1}] массива String содержатся неверные данные: \"{2}\"",
+                rows,
+                columns,
+                value),
+            throwable);
     }
 }
