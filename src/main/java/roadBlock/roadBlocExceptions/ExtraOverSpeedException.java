@@ -1,3 +1,9 @@
+/**
+ * Класс ExtraOverSpeedException наследуется от OverSpeedException.
+ * При условии контроля средой разработки
+ * это гарантирует правильный порядок перехвата исключений.
+ */
+
 public class ExtraOverSpeedException extends OverSpeedException{
 
     private int speed;

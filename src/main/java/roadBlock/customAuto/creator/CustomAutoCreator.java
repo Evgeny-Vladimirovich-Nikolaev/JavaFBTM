@@ -1,5 +1,13 @@
 import java.util.Random;
 
+/**
+ * Между классами CustomCar и CustomTruck нет принципиальной разницы,
+ * поэтому вся логика создания объектов определена в абстрактном классе.
+ * В подклассах меняются предельные значения полей.
+ * Значения скорости и веса автомобилей передаются в конструкторе,
+ * что по меньшей мере не противоречит заданию.
+ */
+
 public abstract class CustomAutoCreator {
 
     private LicenseGenerator licenseGenerator = new LicenseGenerator();
