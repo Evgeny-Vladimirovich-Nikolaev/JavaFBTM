@@ -16,7 +16,7 @@ public class OverWeightException extends RuntimeException{
     }
 
     @Override
-    public String toString() {
+    public String getMessage() {
         if (weight != 0.0) {
             return weight + " т - превышение допустимого веса автомобиля!";
         } else {

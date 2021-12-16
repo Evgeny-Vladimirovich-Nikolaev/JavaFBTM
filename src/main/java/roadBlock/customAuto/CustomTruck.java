@@ -22,31 +22,6 @@ public class CustomTruck  extends CustomAuto implements Crossable{
 
     @Override
     public boolean roadBlockCross() {
-        if(speed > 100) {
-            throw new ExtraOverSpeedException(
-                    "Экстремальное превышение скорости!",
-                    speed);
-        }
-        if(speed > 80) {
-            throw new OverSpeedException(
-                    "Превышение скорости!",
-                    speed);
-        }
-        if(weight > 8.0) {
-            throw new OverWeightException(
-                    "Превышение допустимой массы автомобиля!",
-                    weight);
-        }
-        if(height > 4.0) {
-            throw new OverHeightException(
-                    "Превышение допустимой высоты транспортного средства!",
-                    height);
-        }
-        if(width > 2.5) {
-            throw new OverWidthException(
-                    "Превышение допустимой ширины транспортного средства!",
-                    width);
-        }
         return true;
     }
 
