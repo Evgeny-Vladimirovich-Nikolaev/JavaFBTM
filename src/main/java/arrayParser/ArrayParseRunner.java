@@ -13,19 +13,18 @@ public class ArrayParseRunner {
     private static String[][] myArray;
 
     public static void main(String[] args) throws MyArrayDataException {
-        boolean isCounted = false;
-        do {
-            initArray();
-            fillArray();
-            writeArray();
+        while (true) {
             try {
+                initArray();
+                fillArray();
+                writeArray();
                 countMatrix();
-                isCounted = true;
+                break;
             } catch (MyArraySizeException | MyArrayDataException ex) {
                 System.out.println(ex);
                 System.out.println("Расчет данных для этой матрицы прекращен");
             }
-        } while (!isCounted);
+        }
     }
 
     private static void initArray() {
