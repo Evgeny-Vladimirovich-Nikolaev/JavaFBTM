@@ -96,8 +96,12 @@ public class Calculator {
     }
 
     private void calculateRemainder() {
-        result = Integer.toString(first % second);
-        writeMessage(" % ");
+        if(second != 0) {
+            result = Integer.toString(first % second);
+            writeMessage(" % ");
+        } else {
+            message = "ERROR! You try to divide by zero!";
+        }
     }
 
     private void writeMessage(String operator) {
