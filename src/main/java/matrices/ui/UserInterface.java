@@ -1,4 +1,4 @@
-public class MatricesOperations {
+public class UserInterface {
 
     void initActions() {
         while (resume()) {
@@ -35,11 +35,11 @@ public class MatricesOperations {
     }
 
     private void addMatrix() {
-        new MatrixAddition().chooseInitOptions();
+        new MatrixAddition().initOperation(2);
     }
 
     private void subtractMatrix() {
-        new MatrixSubtraction().chooseInitOptions();
+        new MatrixSubtraction().initOperation(2);
     }
 
     private void multiplyByNumber() {
@@ -47,7 +47,7 @@ public class MatricesOperations {
     }
 
     private void multiplyByMatrix() {
-        new MatricesProduct().chooseInitOptions();
+        new MatricesProduct().initOperation(2);
     }
 
     private void transposeMatrix() {

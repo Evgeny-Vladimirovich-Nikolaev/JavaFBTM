@@ -24,15 +24,6 @@ public class MatrixBuilder {
         x.fillArrayMatrix(values);
     }
 
-    void getRandomArray(int max) {
-        int[] values = new int[m * n];
-        Random random = new Random();
-        for (int i = 0; i < m * n; i++) {
-            values[i] = random.nextInt(max * 2 + 1) - max;
-        }
-        x.fillArrayMatrix(values);
-    }
-
     void fillArray(String matrix) {
         int[] values = new int[m * n];
         int ind = 0;

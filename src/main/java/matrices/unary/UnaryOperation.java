@@ -1,8 +1,8 @@
 import java.util.Random;
 
-public abstract class BinaryOperation {
+public abstract class UnaryOperation {
 
-    Matrix a, b, c;
+    Matrix a;
     int m, n;
 
     void chooseInitOptions() {
@@ -12,16 +12,15 @@ public abstract class BinaryOperation {
             choice = receiver.receiveInt(MatrixMsg.INITIALIZATION_OPTIONS.getMsg());
         }
         switch (choice) {
-            case 1 -> initRandomOperands();
-            case 2 -> initCustomOperands();
+            case 1 -> initRandomOperand();
+            case 2 -> initCustomOperand();
         }
     }
 
-    void initRandomOperands() {
+    void initRandomOperand() {
         initRandomSizes();
         a = getRandomMatrix();
-        b = getRandomMatrix();
-        calculate();
+        calculate(true);
         writeReport();
     }
 
@@ -37,10 +36,10 @@ public abstract class BinaryOperation {
         return builder.getMatrix();
     }
 
-    void initCustomOperands() {
+    void initCustomOperand() {
         initCustomSizes();
         createCustomMatrix();
-        calculate();
+        calculate(false);
         writeReport();
     }
 
@@ -58,7 +57,6 @@ public abstract class BinaryOperation {
 
     void createCustomMatrix() {
         a = buildMatrix("A");
-        b = buildMatrix("B");
     }
 
     Matrix buildMatrix(String matrix) {
@@ -67,15 +65,11 @@ public abstract class BinaryOperation {
         return builder.getMatrix();
     }
 
-    abstract Matrix calculate();
+    abstract void calculate(boolean isRandom);
 
     void writeReport() {
-        System.out.println("Матрица A");
+        System.out.println("Матрица A после " + definiteOperation());
         new MatrixPresentation(a).matrixToString();
-        System.out.println("Матрица B");
-        new MatrixPresentation(b).matrixToString();
-        System.out.println("Матрица C - результат " + definiteOperation() + " двух матриц");
-        new MatrixPresentation(c).matrixToString();
     }
 
     abstract String definiteOperation();

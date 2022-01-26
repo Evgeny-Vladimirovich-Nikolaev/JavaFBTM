@@ -1,9 +1,5 @@
 public class SquareMatrix extends Matrix {
 
-    SquareMatrix() {
-        super();
-    }
-
     SquareMatrix(int lines) {
         super(lines, lines);
     }

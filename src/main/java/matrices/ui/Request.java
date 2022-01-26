@@ -1,49 +1,53 @@
 import java.util.Random;
 
-abstract public class UnaryOperation {
+public class Request {
 
-    Matrix a;
-    int m, n;
+    protected Matrix[] matrices;
+    protected int m, n;
 
-    void chooseInitOptions() {
+    public Matrix[] createMatrixArray(int num) {
+        matrices = new Matrix[num];
+        chooseInitOptions();
+        return matrices;
+    }
+
+    protected void chooseInitOptions() {
         int choice = -1;
         NumberReceiver receiver = new NumberReceiver();
         while (choice < 0 || choice > 2) {
             choice = receiver.receiveInt(MatrixMsg.INITIALIZATION_OPTIONS.getMsg());
         }
         switch (choice) {
-            case 1 -> initRandomOperand();
-            case 2 -> initCustomOperand();
+            case 1 -> initRandomOperands();
+            case 2 -> initCustomOperands();
         }
     }
 
-    void initRandomOperand() {
+    protected void initRandomOperands() {
         initRandomSizes();
-        a = getRandomMatrix();
-        calculate(true);
-        writeReport();
+        for(int i = 0; i < matrices.length; i++) {
+            matrices[i] = getRandomMatrix();
+        }
     }
 
-    void initRandomSizes() {
+    protected void initRandomSizes() {
         Random random = new Random();
         m = random.nextInt(10) + 1;
         n = random.nextInt(10) + 1;
     }
 
-    Matrix getRandomMatrix() {
+    protected Matrix getRandomMatrix() {
         MatrixBuilder builder = new MatrixBuilder(m, n);
         builder.getRandomArray();
         return builder.getMatrix();
     }
 
-    void initCustomOperand() {
+    protected void initCustomOperands() {
         initCustomSizes();
         createCustomMatrix();
-        calculate(false);
-        writeReport();
     }
 
-    void initCustomSizes() {
+    protected void initCustomSizes() {
         NumberReceiver receiver = new NumberReceiver();
         while (m < 1) {
             m = receiver.receiveInt(MatrixMsg.SPECIFY_ROWS_NUMBER.getMsg() +
@@ -55,22 +59,20 @@ abstract public class UnaryOperation {
         }
     }
 
-    void createCustomMatrix() {
-        a = buildMatrix("A");
+    protected void createCustomMatrix() {
+        for(int i = 0; i < matrices.length; i++) {
+            if(i == 0) {
+                matrices[0] = buildMatrix("A");
+            } else {
+                matrices[i] = buildMatrix("B");
+            }
+        }
     }
 
-    Matrix buildMatrix(String matrix) {
+    protected Matrix buildMatrix(String matrix) {
         MatrixBuilder builder = new MatrixBuilder(m, n);
         builder.fillArray(matrix);
         return builder.getMatrix();
     }
 
-    abstract void calculate(boolean isRandom);
-
-    void writeReport() {
-        System.out.println("Матрица A после " + definiteOperation());
-        new MatrixPresentation(a).matrixToString();
-    }
-
-    abstract String definiteOperation();
 }

@@ -1,12 +1,12 @@
 public class MatrixAddition extends BinaryOperation {
 
     @Override
-    Matrix calculate() {
-        return c = a.add(b);
+    protected Matrix calculate() {
+        return result = matrices[0].add(matrices[1]);
     }
 
     @Override
-    String definiteOperation() {
+    protected String definiteOperation() {
         return "сложения";
     }
 }
