@@ -12,7 +12,7 @@ class SquareMatrixTest {
     }
 
     @Test
-    void findDeterminant() {
+    public void findDeterminant() {
         assertEquals(137, sm.findDeterminant(new int[][] {{137}}));
         assertEquals(-57101, sm.findDeterminant(new int[][]
                        {{45, 32, -7},
