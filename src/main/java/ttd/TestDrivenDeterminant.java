@@ -8,7 +8,10 @@ public class TestDrivenDeterminant {
 
     public int findBySeparateActions(int[][] matrix) {
         if(matrix.length != 3 || matrix[0].length != 3) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("""
+        Метод findBySeparateActions находит детерминант
+        только в матрицах размером 3x3
+        """);
         }
         return  matrix[0][0] * matrix[1][1] * matrix[2][2]
                 + matrix[0][1] * matrix[1][2] * matrix[2][0]
@@ -19,22 +22,28 @@ public class TestDrivenDeterminant {
     }
 
     public int findByCycle (int[][] matrix) {
+        if(matrix.length != 3 || matrix[0].length != 3) {
+            throw new IllegalArgumentException("""
+        Метод findByCycle находит детерминант
+        только в матрицах размером 3x3
+        """);
+        }
         int determinant = 0;
-        for(int column = 0; column < matrix.length; column++) {
+        for(int column = 0; column < 3; column++) {
             int temp = 1;
-            for (int i = 0, j = column; i < matrix.length; i++) {
+            for (int i = 0, j = column; i < 3; i++) {
                 temp *= matrix[i][j];
                 j++;
-                j %= matrix.length;
+                j %= 3;
             }
             determinant += temp;
         }
-        for(int column = 0; column < matrix.length; column ++) {
+        for(int column = 0; column < 3; column ++) {
             int temp = 1;
-            for(int i = matrix.length - 1, j = column; i >= 0; i--) {
+            for(int i = 2, j = column; i >= 0; i--) {
                 temp *= matrix[i][j];
                 j++;
-                j %= matrix.length;
+                j %= 3;
             }
             determinant -= temp;
         }

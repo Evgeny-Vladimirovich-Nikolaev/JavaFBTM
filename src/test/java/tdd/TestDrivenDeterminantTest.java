@@ -16,10 +16,10 @@ class TestDrivenDeterminantTest {
                 {{13, 13, 13},
                 {0, 13, 13},
                 {0, 0, 13}}));
-        assertEquals(-144300, tdd.findBySeparateActions(new int[][]
-                {{56, 25, 0},
-                {5, -90, 35},
-                {0, 42, 12}}));
+        assertEquals(0, tdd.findByCycle(new int[][]
+                {{4, 5, 6},
+                {1, 2, 3},
+                {3,2, 1}}));
     }
 
     @Test
@@ -32,9 +32,9 @@ class TestDrivenDeterminantTest {
                 {{13, 13, 13},
                 {0, 13, 13},
                 {0, 0, 13}}));
-        assertEquals(-144300, tdd.findByCycle(new int[][]
-                {{56, 25, 0},
-                {5, -90, 35},
-                {0, 42, 12}}));
+        assertEquals(0, tdd.findByCycle(new int[][]
+                {{4, 5, 6},
+                {1, 2, 3},
+                {3,2, 1}}));
     }
 }
