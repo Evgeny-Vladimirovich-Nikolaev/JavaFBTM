@@ -2,7 +2,7 @@ public class MatrixRunner {
 
     public static void main(String[] args) {
         new MatrixDemo().demonstrateMatrices();
-        new UserInterface().initActions();
+        new MainInterface().initActions();
         Receiver.close();
     }
 

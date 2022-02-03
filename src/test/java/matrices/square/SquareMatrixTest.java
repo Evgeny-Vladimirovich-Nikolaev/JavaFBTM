@@ -7,10 +7,6 @@ class SquareMatrixTest {
 
     SquareMatrix sm = new SquareMatrix(0);
 
-    @BeforeEach
-    void setUp() {
-    }
-
     @Test
     public void findDeterminant() {
         assertEquals(137, sm.findDeterminant(new int[][] {{137}}));
