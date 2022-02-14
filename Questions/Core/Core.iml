@@ -7,7 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/inheritance" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/lambda" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/lambda/example-1" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java/lambda/strams-api" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/lambda/streams-api" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

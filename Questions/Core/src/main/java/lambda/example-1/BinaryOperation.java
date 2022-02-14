@@ -1,3 +1,4 @@
+@FunctionalInterface
 public interface BinaryOperation {
 
     default void show(String info) {
@@ -5,4 +6,5 @@ public interface BinaryOperation {
     }
 
     int count(int a, int b);
-}
+
+ }

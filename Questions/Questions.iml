@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/lambda/example_1" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/lambda" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/lambda/streams" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/.gradle/7.1/vcsMetadata-1" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
