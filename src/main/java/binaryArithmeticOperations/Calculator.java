@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Calculator {
-
     public static final String CHOOSE = "Choose operation, Enter:\n";
     public static final String ADDITION = "1 to add\n";
     public static final String SUBTRACTION = "2 to subtract\n";

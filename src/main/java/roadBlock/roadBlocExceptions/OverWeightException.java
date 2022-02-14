@@ -1,5 +1,4 @@
 public class OverWeightException extends RuntimeException{
-
     private double weight;
 
     private OverWeightException() {

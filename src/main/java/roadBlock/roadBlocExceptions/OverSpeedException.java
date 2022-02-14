@@ -1,5 +1,4 @@
 public class OverSpeedException extends RuntimeException{
-
     private int speed;
 
     public OverSpeedException() {

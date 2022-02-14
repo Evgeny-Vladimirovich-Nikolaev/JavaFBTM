@@ -1,5 +1,4 @@
 public class Matrix {
-
     int m, n;                   //rows, columns;
     private int[][] matrixArray;
 

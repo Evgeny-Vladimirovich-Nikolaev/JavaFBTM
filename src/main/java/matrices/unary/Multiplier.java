@@ -1,7 +1,6 @@
 import java.util.Random;
 
 public class Multiplier extends UnaryOperation {
-
     private int number;
 
     @Override

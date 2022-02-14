@@ -1,5 +1,4 @@
 public class MatrixPresentation {
-
     private int[][] matrixArray;
     private int m, n;               // rows, columns
     private int numberLength = 0;

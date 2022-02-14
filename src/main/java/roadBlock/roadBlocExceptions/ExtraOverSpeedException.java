@@ -5,7 +5,6 @@
  */
 
 public class ExtraOverSpeedException extends OverSpeedException{
-
     private int speed;
 
     public ExtraOverSpeedException() {

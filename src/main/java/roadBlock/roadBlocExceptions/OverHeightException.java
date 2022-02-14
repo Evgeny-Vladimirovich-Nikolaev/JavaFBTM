@@ -1,5 +1,4 @@
 public class OverHeightException extends RuntimeException {
-
     private double height;
 
     public OverHeightException() {

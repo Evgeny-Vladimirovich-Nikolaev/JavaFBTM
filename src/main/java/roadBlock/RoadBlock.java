@@ -1,5 +1,4 @@
 public class RoadBlock {
-
     private static final int EXTRA_SPEED_LIMIT = 100;
     private static final int SPEED_LIMIT = 80;
     private static final double WEIGHT_LIMIT = 8.0;

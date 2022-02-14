@@ -1,5 +1,4 @@
 public class MatricesProduct extends BinaryOperation {
-
     @Override
     public void initOperation(int operands) {
         matrices = new RequestForProduct().createMatrixArray(operands);

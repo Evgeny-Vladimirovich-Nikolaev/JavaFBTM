@@ -1,7 +1,6 @@
 import java.util.Random;
 
 public class MatrixBuilder {
-
     Matrix x;
     private int m, n;
 

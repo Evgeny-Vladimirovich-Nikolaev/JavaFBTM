@@ -2,7 +2,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class MinorGetterTest {
-
     MinorGetter mg1 = new MinorGetter(new int[][]
             {{45, 32, -7},
             {80, 13, -24},

@@ -1,5 +1,4 @@
 public class OverWidthException extends RuntimeException{
-
     private double width;
 
     private OverWidthException() {

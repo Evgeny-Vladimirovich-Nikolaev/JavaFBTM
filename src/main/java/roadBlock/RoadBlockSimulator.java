@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Random;
-
 public class RoadBlockSimulator {
 
     private ArrayList<Crossable> crossables = new ArrayList<>(50);

@@ -1,7 +1,6 @@
 import java.util.Random;
 
 public class RequestForProduct extends Request{
-
     private int k;
 
     @Override

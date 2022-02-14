@@ -1,5 +1,4 @@
 public class MainInterface {
-
     void initActions() {
         while (resume()) {
             chooseOperation();

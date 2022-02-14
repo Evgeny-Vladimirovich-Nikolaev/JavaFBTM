@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestDrivenDeterminantTest {
-
     TestDrivenDeterminant tdd = new TestDrivenDeterminant();
 
     @Test

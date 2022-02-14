@@ -1,5 +1,4 @@
 public enum MatrixMsg {
-
     CHOOSE_OPERATION
             ("""
                     Выберите действие:

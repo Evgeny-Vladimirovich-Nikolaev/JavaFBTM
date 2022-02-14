@@ -1,5 +1,4 @@
 public class SquareMatrix extends Matrix {
-
     SquareMatrix(int lines) {
         super(lines, lines);
     }
@@ -24,7 +23,6 @@ public class SquareMatrix extends Matrix {
 }
 
 class MinorGetter {
-
     private int[][] sourceArray;
     private int[][] minor;
     private int columnElem;

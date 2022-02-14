@@ -1,5 +1,4 @@
 public class CustomCar extends CustomAuto implements Crossable {
-
     private int speed;
     private double weight;
     private double width;

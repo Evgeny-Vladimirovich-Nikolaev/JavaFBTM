@@ -5,7 +5,6 @@
  * В соответствии с практикой TDD тесты написаны заранее.
  */
 public class TestDrivenDeterminant {
-
     public int findBySeparateActions(int[][] matrix) {
         if(matrix.length != 3 || matrix[0].length != 3) {
             throw new IllegalArgumentException("""

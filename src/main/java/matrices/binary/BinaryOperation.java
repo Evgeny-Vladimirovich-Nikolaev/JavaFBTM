@@ -1,5 +1,4 @@
 public abstract class BinaryOperation {
-
     protected Matrix result;
     protected Matrix[] matrices;
 
